@@ -50,7 +50,8 @@
       const messageBytes = new TextEncoder().encode(message);
       const signature = await $walletStore.signMessage(messageBytes);
       const signatureBase64 = Buffer.from(signature).toString('base64');
-      const baseUrl = 'http://localhost:8001'
+      const baseUrl = 'https://api.omniminds.ai'
+      // const baseUrl = 'http://localhost:8001'
       // Send address, signature and timestamp to backend
       await fetch(`${baseUrl}/v1/wallet/connect`, {
         method: 'POST',

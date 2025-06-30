@@ -108,29 +108,29 @@
                     <Monitor class="h-4 w-4 min-w-4 text-purple-500" />
                   </div>
                   <div>
-                    <div class="font-medium text-gray-900">Viralmind Desktop</div>
+                    <div class="font-medium text-gray-900">Omniminds Desktop</div>
                     <div class="text-xs text-gray-500">All-in-one AI application</div>
                   </div>
                 </a>
                 <a
-                  href="/desktop#gym"
+                  href="/desktop#arena"
                   class="ml-4 flex items-center gap-3 rounded-lg p-3 text-sm text-gray-600 transition-colors hover:bg-gray-50 hover:text-gray-900">
                   <div class="flex h-8 w-8 items-center justify-center rounded-lg bg-purple-500/10">
                     <Dumbbell class="h-4 w-4 text-purple-500" />
                   </div>
                   <div>
-                    <div class="font-medium text-gray-900">Training Gym</div>
+                    <div class="font-medium text-gray-900">The Arena</div>
                     <div class="text-xs text-gray-500">Contribute demonstrations</div>
                   </div>
                 </a>
                 <a
-                  href="/desktop#forge"
+                  href="/desktop#dojo"
                   class="ml-4 flex items-center gap-3 rounded-lg p-3 text-sm text-gray-600 transition-colors hover:bg-gray-50 hover:text-gray-900">
                   <div class="flex h-8 w-8 items-center justify-center rounded-lg bg-purple-500/10">
                     <Hammer class="h-4 w-4 text-purple-500" />
                   </div>
                   <div>
-                    <div class="font-medium text-gray-900">The Forge</div>
+                    <div class="font-medium text-gray-900">The Dojo</div>
                     <div class="text-xs text-gray-500">Build custom agents</div>
                   </div>
                 </a>
@@ -171,12 +171,11 @@
                 class="absolute left-0 mt-2 w-48 rounded-lg border border-gray-200 bg-white py-2 shadow-lg"
                 transition:slide>
                 <a
-                  href=""
+                  href="https://discord.gg/YxP6yv9tAV"
                   target="_blank"
                   class="disabled flex items-center gap-2 px-4 py-2 text-sm text-gray-600 transition-colors hover:bg-gray-50 hover:text-gray-900">
                   <i class="si si-discord h-4 w-4" />
                   Discord
-                  <span class="text-xs">(soon...)</span>
                 </a>
                 <a
                   href="https://t.me/omnimindsai"
@@ -199,24 +198,17 @@
                   <i class="si si-github h-4 w-4" />
                   GitHub
                 </a>
-                <a
-                  href="https://github.com/omniminds-ai/viralmind-airdrop"
-                  target="_blank"
-                  class="flex items-center gap-2 px-4 py-2 text-sm text-gray-600 transition-colors hover:bg-gray-50 hover:text-gray-900">
-                  <i class="si si-github h-4 w-4" />
-                  ViralMind Airdrop
-                </a>
               </div>
             {/if}
           </div>
 
           <!-- Docs -->
           <div class="relative">
-            <button
-              class="navbar-dropdown-button group flex items-center gap-2 text-sm font-medium text-gray-300 transition-colors">
+            <a href="https://omniminds-ai.gitbook.io/whitepaper" target="_blank"
+              class="navbar-dropdown-button group flex items-center gap-2 text-sm font-medium hover:bg-gray-50 hover:text-gray-900 transition-colors">
               <Book class="h-4 w-4 transition-transform group-hover:scale-110" />
-              Docs (Coming Soon)
-            </button>
+              Whitepaper
+            </a>
           </div>
 
           <!--          &lt;!&ndash; Research Dropdown &ndash;&gt;-->
@@ -307,26 +299,20 @@
               href="/desktop"
               class="flex items-center gap-3 px-2 py-2 text-gray-600 transition-colors hover:text-gray-900">
               <Monitor class="h-5 w-5 min-w-5" />
-              Viralmind Desktop
-            </a>
-            <!-- <a
-              href="/desktop#gym"
-              class="ml-5 flex items-center gap-3 px-2 py-2 text-gray-600 transition-colors hover:text-gray-900">
-              <Dumbbell class="h-5 w-5" />
-              Training Gym
+              Omniminds Desktop
             </a>
             <a
-              href="/desktop#forge"
+              href="/desktop#arena"
+              class="ml-5 flex items-center gap-3 px-2 py-2 text-gray-600 transition-colors hover:text-gray-900">
+              <Dumbbell class="h-5 w-5" />
+              The Arena
+            </a>
+            <a
+              href="/desktop#dojo"
               class="ml-5 flex items-center gap-3 px-2 py-2 text-gray-600 transition-colors hover:text-gray-900">
               <Hammer class="h-5 w-5" />
-              The Forge
-            </a> -->
-            <!--            <a-->
-            <!--              href="/gym"-->
-            <!--              class="flex items-center gap-3 px-2 py-2 text-gray-600 transition-colors hover:text-gray-900">-->
-            <!--              <Earth class="h-5 w-5" />-->
-            <!--              Training Gym Classic-->
-            <!--            </a>-->
+              The Dojo
+              </a>
           </div>
 
           <!-- Community Section -->
@@ -341,11 +327,11 @@
             {#if isMobileCommunityDropdownOpen}
               <div transition:slide>
                 <a
-                  href=""
+                  href="https://discord.gg/YxP6yv9tAV"
                   target="_blank"
                   class="disabled flex items-center gap-3 px-2 py-2 text-gray-600 transition-colors hover:text-gray-900">
                   <i class="si si-discord h-5 w-5" />
-                  Discord (soon)
+                  Discord
                 </a>
                 <a
                   href="https://t.me/omnimindsai"
@@ -367,13 +353,6 @@
                   class="flex items-center gap-3 px-2 py-2 text-gray-600 transition-colors hover:text-gray-900">
                   <i class="si si-github h-5 w-5" />
                   <span class="animated-underline">GitHub</span>
-                </a>
-                <a
-                  href="https://github.com/omniminds-ai/viralmind-airdrop"
-                  target="_blank"
-                  class="flex items-center gap-3 px-2 py-2 text-gray-600 transition-colors hover:text-gray-900">
-                  <i class="si si-github h-5 w-5" />
-                  <span class="animated-underline">ViralMind Airdrop</span>
                 </a>
               </div>
             {/if}

@@ -40,8 +40,7 @@
   import ButtonCTA from '$lib/components/ButtonCTA.svelte';
   import VideoPopup from '$lib/components/VideoPopup.svelte';
 
-  let showTrainingVideo = false;
-  let showForgeVideo = false;
+  let showDemoVideo = false;
 
   onMount(() => {
     // Any initialization code here
@@ -49,9 +48,9 @@
 </script>
 
 <svelte:head>
-  <title>OmniMinds.ai - Viralmind Desktop</title>
-  <meta property="og:title" content="OmniMinds.ai - Viralmind Desktop" />
-  <meta name="twitter:title" content="OmniMinds.ai - Viralmind Desktop" />
+  <title>Omniminds.ai - Omniminds Desktop</title>
+  <meta property="og:title" content="Omniminds.ai - Omniminds Desktop" />
+  <meta name="twitter:title" content="Omniminds.ai - Omniminds Desktop" />
   <meta
     name="description"
     content="Your unified platform for contributing to, training, and evaluating computer-use agents, all in one powerful desktop application." />
@@ -70,11 +69,11 @@
       <div class="mb-8 text-center">
         <img
           src={pfp}
-          alt="Viralmind Desktop"
+          alt="Omniminds Desktop"
           class="mx-auto mb-4 h-28 w-28 rounded-2xl border shadow-xl" />
         <h1 class="mb-3 text-5xl font-bold">
           <span class="bg-gradient-to-r from-purple-600 to-blue-500 bg-clip-text text-transparent">
-            Viralmind Desktop
+            Omniminds Desktop
           </span>
         </h1>
         <div
@@ -86,19 +85,19 @@
           Your unified platform for contributing to, training, and evaluating computer-use agents,
           all in one powerful desktop application.
         </p>
-        <div class="flex flex-col justify-center gap-4 sm:flex-row">
-          <ButtonCTA href="/download" class="inline-flex items-center gap-2">
-            <Download class="h-5 w-5" />
-            Download Now
-          </ButtonCTA>
-          <a
-            href="https://github.com/omniminds-ai/vm-desktop"
-            target="_blank"
-            class="group inline-flex items-center gap-2 px-6 py-3 text-gray-900">
-            <Github class="h-5 w-5" />
-            <span class="animated-underline">View Source</span>
-          </a>
-        </div>
+<!--        <div class="flex flex-col justify-center gap-4 sm:flex-row">-->
+<!--          <ButtonCTA href="/download" class="inline-flex items-center gap-2">-->
+<!--            <Download class="h-5 w-5" />-->
+<!--            Download Now-->
+<!--          </ButtonCTA>-->
+<!--          <a-->
+<!--            href="https://github.com/omniminds-ai/vm-desktop"-->
+<!--            target="_blank"-->
+<!--            class="group inline-flex items-center gap-2 px-6 py-3 text-gray-900">-->
+<!--            <Github class="h-5 w-5" />-->
+<!--            <span class="animated-underline">View Source</span>-->
+<!--          </a>-->
+<!--        </div>-->
       </div>
 
       <div class="relative mt-16 overflow-hidden rounded-xl">
@@ -110,8 +109,8 @@
     </div>
   </section>
 
-  <!-- Training Gym Section -->
-  <section id="gym" class="bg-gray-50 py-20">
+  <!-- Arena Section -->
+  <section id="arena" class="bg-gray-50 py-20">
     <div class="mx-auto max-w-7xl px-4">
       <div class="grid grid-cols-1 items-center gap-12 lg:grid-cols-2">
         <div>
@@ -119,9 +118,9 @@
             class="mb-6 inline-flex h-16 w-16 items-center justify-center rounded-xl bg-purple-100">
             <Dumbbell class="h-10 w-10 text-purple-600" />
           </div>
-          <h2 class="mb-4 text-4xl font-bold text-gray-900">Training Gym</h2>
+          <h2 class="mb-4 text-4xl font-bold text-gray-900">The Arena</h2>
           <p class="mb-6 text-xl text-gray-600">
-            Record your everyday computer tasks to train AI models and earn $TOKEN tokens.
+            Record your everyday computer tasks to train AI models and earn SOL.
             High-quality demonstrations earn more per task, rewarding expert skill.
           </p>
           <ul class="mb-8 space-y-3">
@@ -152,17 +151,19 @@
           </ul>
           <div class="flex gap-4">
             <button
-              on:click={() => (showTrainingVideo = true)}
+              on:click={() => {
+              showDemoVideo = true;
+            }}
               class="inline-flex items-center gap-2 rounded-full bg-purple-600 px-6 py-3 text-white shadow transition-colors hover:bg-purple-700">
               Watch Demo
             </button>
-            <a
-              href="/download"
-              class="inline-flex items-center gap-2 rounded-full border border-purple-600 bg-white px-6 py-3 text-purple-600 shadow transition-colors hover:bg-purple-50">
-              Get Started
-            </a>
+<!--            <a-->
+<!--              href="/download"-->
+<!--              class="inline-flex items-center gap-2 rounded-full border border-purple-600 bg-white px-6 py-3 text-purple-600 shadow transition-colors hover:bg-purple-50">-->
+<!--              Get Started-->
+<!--            </a>-->
           </div>
-          <VideoPopup videoId="cUjI2f7w4yM" bind:isOpen={showTrainingVideo} />
+          <VideoPopup videoSrc="https://drive.google.com/file/d/1w02RoN1MAQ0-WLEXFDRNNiJLGMaYoDNb/preview" bind:isOpen={showDemoVideo} />
         </div>
         <div class="overflow-hidden rounded border border-gray-200 bg-white shadow-xl">
           <div>
@@ -173,8 +174,8 @@
     </div>
   </section>
 
-  <!-- The Forge Section -->
-  <section id="forge" class="bg-white py-20">
+  <!-- The Dojo Section -->
+  <section id="dojo" class="bg-white py-20">
     <div class="mx-auto max-w-7xl px-4">
       <div class="grid grid-cols-1 items-center gap-12 lg:grid-cols-2">
         <div class="order-2 lg:order-1">
@@ -182,9 +183,9 @@
             class="mb-6 inline-flex h-16 w-16 items-center justify-center rounded-xl bg-blue-100">
             <Hammer class="h-10 w-10 text-blue-600" />
           </div>
-          <h2 class="mb-4 text-4xl font-bold text-gray-900">The Forge</h2>
+          <h2 class="mb-4 text-4xl font-bold text-gray-900">The Dojo</h2>
           <p class="mb-6 text-xl text-gray-600">
-            Generate training gym tasks by prompting skills and capabilities. Our community provides
+            Generate Dojo tasks by prompting skills and capabilities. Our community provides
             targeted demonstrations to automate your desired workflow.
           </p>
           <ul class="mb-8 space-y-3">
@@ -208,11 +209,11 @@
             </li>
           </ul>
           <button
-            on:click={() => (showForgeVideo = true)}
+            on:click={() => (showDemoVideo = true)}
             class="inline-flex items-center gap-2 rounded-full bg-blue-600 px-6 py-3 text-white shadow transition-colors hover:bg-blue-700">
             Watch Demo
           </button>
-          <VideoPopup videoId="5N0zWHcLYho" bind:isOpen={showForgeVideo} />
+          <VideoPopup videoSrc="https://drive.google.com/file/d/1w02RoN1MAQ0-WLEXFDRNNiJLGMaYoDNb/preview" bind:isOpen={showDemoVideo} />
         </div>
         <div
           class="relative order-1 rounded-xl border border-gray-100 bg-white p-8 shadow-xl lg:order-2">
@@ -483,9 +484,9 @@
               <div class="rounded-lg bg-white p-4 shadow-sm">
                 <img
                   src={pfp}
-                  alt="Viralmind Desktop"
+                  alt="Omniminds Desktop"
                   class="mx-auto mb-2 h-8 w-8 rounded-md border shadow-md" />
-                <p class="text-sm font-medium">Viralmind Desktop</p>
+                <p class="text-sm font-medium">Omniminds Desktop</p>
               </div>
               <div class="mt-4 rounded-lg bg-purple-100 p-3 shadow-sm">
                 <p class="text-xs text-purple-800">Secure Local Database</p>
@@ -518,19 +519,19 @@
   </section>
 
   <!-- Download CTA -->
-  <section class="bg-gradient-to-r from-purple-600 to-blue-600 py-20 text-white">
-    <div class="mx-auto max-w-5xl px-4 text-center">
-      <h2 class="mb-6 text-3xl font-bold">Ready to get started?</h2>
-      <p class="mx-auto mb-8 max-w-2xl text-xl text-white/80">
-        Download Viralmind Desktop today and join our community in pushing the boundaries of
-        computer-use AI.
-      </p>
-      <a
-        href="/download"
-        class="inline-flex items-center gap-2 rounded-full bg-white px-8 py-4 text-lg font-medium text-purple-600 shadow-lg transition-colors hover:bg-gray-100">
-        <Download class="h-5 w-5" />
-        Download Now
-      </a>
-    </div>
-  </section>
+<!--  <section class="bg-gradient-to-r from-purple-600 to-blue-600 py-20 text-white">-->
+<!--    <div class="mx-auto max-w-5xl px-4 text-center">-->
+<!--      <h2 class="mb-6 text-3xl font-bold">Ready to get started?</h2>-->
+<!--      <p class="mx-auto mb-8 max-w-2xl text-xl text-white/80">-->
+<!--        Download Viralmind Desktop today and join our community in pushing the boundaries of-->
+<!--        computer-use AI.-->
+<!--      </p>-->
+<!--      <a-->
+<!--        href="/download"-->
+<!--        class="inline-flex items-center gap-2 rounded-full bg-white px-8 py-4 text-lg font-medium text-purple-600 shadow-lg transition-colors hover:bg-gray-100">-->
+<!--        <Download class="h-5 w-5" />-->
+<!--        Download Now-->
+<!--      </a>-->
+<!--    </div>-->
+<!--  </section>-->
 </div>

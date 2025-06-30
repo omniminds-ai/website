@@ -14,12 +14,12 @@
   async function fetchPrices() {
     try {
       const response = await fetch(
-        'https://api.jup.ag/price/v2?ids=G6iRK8kN67HJFrPA1CDA5KZaPJMiBu3bqdd9vdKBpump,So11111111111111111111111111111111111111112'
+        'https://lite-api.jup.ag/price/v3?ids=G6iRK8kN67HJFrPA1CDA5KZaPJMiBu3bqdd9vdKBpump,So11111111111111111111111111111111111111112'
       );
       const json = await response.json();
 
-      omniPrice = parseFloat(json.data[TOKEN_DATA.contractAddress].price);
-      solPrice = parseFloat(json.data.So11111111111111111111111111111111111111112.price);
+      omniPrice = parseFloat(json[TOKEN_DATA.contractAddress].usdPrice);
+      solPrice = parseFloat(json.So11111111111111111111111111111111111111112.usdPrice);
       omniPerSol = solPrice / omniPrice;
     } catch (error) {
       console.error('Error fetching prices:', error);

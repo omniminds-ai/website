@@ -2,7 +2,6 @@
   import logo_full from '$lib/assets/Logo_Standard_dark.png';
   import logo from '$lib/assets/logo.png';
   import exampleUsage from '$lib/assets/exampleusage.mp4';
-  import data from '$lib/assets/databrwozing.mp4';
   import gym from '$lib/assets/gym.png';
   import ButtonCTA from '$lib/components/ButtonCTA.svelte';
   import { onMount } from 'svelte';
@@ -186,11 +185,8 @@
 
         <!-- Right Content -->
         <div class="relative bottom-0 overflow-x-hidden rounded-xl">
-          <video src={exampleUsage} autoplay loop muted playsinline class=" -mr-[25%] w-[125%]">
+          <video src={exampleUsage} autoplay loop muted playsinline class=" -mr-[25%] w-[155%]">
           </video>
-          <div
-            class="absolute bottom-0 left-0 -mr-[25%] h-64 w-full bg-gradient-to-t from-white to-transparent md:w-[125%]">
-          </div>
         </div>
       </div>
     </div>
@@ -202,19 +198,19 @@
       <h2 class="mb-4 text-4xl font-bold text-gray-900">AI agents built from your data</h2>
       <p class="mb-8 text-xl text-gray-600">Start earning while contributing skills</p>
       <div class="flex flex-col items-center gap-3">
-        <div class="flex justify-center gap-4">
-          <ButtonCTA href="/download" class="inline-flex items-center gap-2">
-            <Download class="h-5 w-5" />
-            Download for Desktop
-          </ButtonCTA>
-          <a
-            href="https://github.com/omniminds-ai"
-            target="_blank"
-            class="group inline-flex items-center gap-2 px-6 py-3 text-gray-900">
-            <Github class="h-5 w-5" />
-            <span class="animated-underline">View Source</span>
-          </a>
-        </div>
+<!--        <div class="flex justify-center gap-4">-->
+<!--          <ButtonCTA href="/download" class="inline-flex items-center gap-2">-->
+<!--            <Download class="h-5 w-5" />-->
+<!--            Download for Desktop-->
+<!--          </ButtonCTA>-->
+<!--          <a-->
+<!--            href="https://github.com/omniminds-ai"-->
+<!--            target="_blank"-->
+<!--            class="group inline-flex items-center gap-2 px-6 py-3 text-gray-900">-->
+<!--            <Github class="h-5 w-5" />-->
+<!--            <span class="animated-underline">View Source</span>-->
+<!--          </a>-->
+<!--        </div>-->
       </div>
     </div>
   </section>
@@ -225,7 +221,7 @@
       <!-- Training Gym -->
       <div class="mb-20 grid items-center gap-12 lg:grid-cols-2">
         <div class="relative overflow-hidden rounded bg-gray-100 shadow-2xl">
-          <img src={gym} alt="Training Gym Demo" class="h-full w-full object-cover" />
+          <img src={gym} alt="Arena Demo" class="h-full w-full object-cover" />
         </div>
         <div class="text-left">
           <div
@@ -237,7 +233,7 @@
               class="inline-flex h-12 w-12 items-center justify-center rounded-xl bg-gradient-to-br from-purple-700/5 to-purple-500/5">
               <Dumbbell class="h-6 w-6 text-purple-700" />
             </div>
-            <h2 class="text-3xl font-bold text-gray-900">Training Gym</h2>
+            <h2 class="text-3xl font-bold text-gray-900">The Arena</h2>
           </div>
           <p class="mb-6 text-lg text-gray-600">
             Show AI how to use apps, earn rewards. Get instant $OMNIS payments when you upload
@@ -246,13 +242,12 @@
           <button
             on:click={() => {
               showTrainingVideo = true;
-              posthog.capture('watch_training_demo');
             }}
             class="inline-flex items-center gap-2 rounded-lg bg-white px-6 py-3 text-gray-900 shadow transition-colors hover:bg-gray-50">
             <PlayCircle class="h-5 w-5" />
             Watch Demo
           </button>
-          <VideoPopup videoId="cUjI2f7w4yM" bind:isOpen={showTrainingVideo} />
+          <VideoPopup videoSrc="https://drive.google.com/file/d/1w02RoN1MAQ0-WLEXFDRNNiJLGMaYoDNb/preview" bind:isOpen={showTrainingVideo} />
         </div>
       </div>
 
@@ -268,7 +263,7 @@
               class="inline-flex h-12 w-12 items-center justify-center rounded-xl bg-gradient-to-br from-purple-700/5 to-purple-500/5">
               <Hammer class="h-6 w-6 text-purple-700" />
             </div>
-            <h2 class="text-3xl font-bold text-gray-900">The Forge</h2>
+            <h2 class="text-3xl font-bold text-gray-900">The Dojo</h2>
           </div>
           <p class="mb-6 text-lg text-gray-600">
             Specify your AI needs, we'll handle the rest. Quality demonstrations at scale train your
@@ -276,14 +271,14 @@
           </p>
           <button
             on:click={() => {
-              showForgeVideo = true;
+              showTrainingVideo = true;
               posthog.capture('watch_forge_demo');
             }}
             class="inline-flex items-center gap-2 rounded-lg bg-white px-6 py-3 text-gray-900 shadow transition-colors hover:bg-gray-50">
             <PlayCircle class="h-5 w-5" />
             Watch Demo
           </button>
-          <VideoPopup videoId="5N0zWHcLYho" bind:isOpen={showForgeVideo} />
+          <VideoPopup videoSrc="https://drive.google.com/file/d/1w02RoN1MAQ0-WLEXFDRNNiJLGMaYoDNb/preview" bind:isOpen={showForgeVideo} />
         </div>
         <div
           class="relative order-1 rounded-xl border border-gray-100 bg-white p-8 shadow-2xl lg:order-2">
@@ -350,7 +345,7 @@
                 </div>
                 <div class="rounded-lg bg-purple-100 px-3 py-2 text-sm text-purple-900">
                   <p>
-                    Hi! I'm VM-1, your computer-use assistant. What would you like help with? 🖥️
+                    Hi! I'm your computer-use assistant. What would you like help with? 🖥️
                   </p>
                 </div>
               </div>
@@ -400,23 +395,22 @@
               class="inline-flex h-12 w-12 items-center justify-center rounded-xl bg-gradient-to-br from-purple-700/5 to-purple-500/5">
               <Bot class="h-6 w-6 text-purple-700" />
             </div>
-            <h2 class="text-3xl font-bold text-gray-900">VM-1 Computer Use Agent</h2>
+            <h2 class="text-3xl font-bold text-gray-900">Computer Use Agent</h2>
           </div>
           <p class="mb-6 text-lg text-gray-600">
-            Complete computer tasks with VM-1, a state-of-the-art computer-use agent trained with
+            Complete computer tasks with a state-of-the-art computer-use agent trained with
             the data generated by the community.
           </p>
 
           <button
             on:click={() => {
               showAgentVideo = true;
-              posthog.capture('watch_agent_demo');
             }}
             class="inline-flex items-center gap-2 rounded-lg bg-white px-6 py-3 text-gray-900 shadow transition-colors hover:bg-gray-50">
             <PlayCircle class="h-5 w-5" />
             Watch Demo
           </button>
-          <VideoPopup videoId="VVj7I1SyTI8" bind:isOpen={showAgentVideo} />
+          <VideoPopup videoSrc="https://drive.google.com/file/d/1w02RoN1MAQ0-WLEXFDRNNiJLGMaYoDNb/preview" bind:isOpen={showAgentVideo} />
         </div>
       </div>
 
