@@ -198,19 +198,19 @@
       <h2 class="mb-4 text-4xl font-bold text-gray-900">AI agents built from your data</h2>
       <p class="mb-8 text-xl text-gray-600">Start earning while contributing skills</p>
       <div class="flex flex-col items-center gap-3">
-<!--        <div class="flex justify-center gap-4">-->
-<!--          <ButtonCTA href="/download" class="inline-flex items-center gap-2">-->
-<!--            <Download class="h-5 w-5" />-->
-<!--            Download for Desktop-->
-<!--          </ButtonCTA>-->
-<!--          <a-->
-<!--            href="https://github.com/omniminds-ai"-->
-<!--            target="_blank"-->
-<!--            class="group inline-flex items-center gap-2 px-6 py-3 text-gray-900">-->
-<!--            <Github class="h-5 w-5" />-->
-<!--            <span class="animated-underline">View Source</span>-->
-<!--          </a>-->
-<!--        </div>-->
+        <div class="flex justify-center gap-4">
+          <ButtonCTA href="/download" class="inline-flex items-center gap-2">
+            <Download class="h-5 w-5" />
+            Download for Desktop
+          </ButtonCTA>
+          <a
+            href="https://github.com/omniminds-ai"
+            target="_blank"
+            class="group inline-flex items-center gap-2 px-6 py-3 text-gray-900">
+            <Github class="h-5 w-5" />
+            <span class="animated-underline">View Source</span>
+          </a>
+        </div>
       </div>
     </div>
   </section>
@@ -586,28 +586,19 @@
                     {/if}
                   {/each}
                   <div class="mt-12 text-center">
-                    -->
-                    <!--        <h2 class="mb-4 text-3xl font-bold text-gray-900">Ready to get started?</h2>-->
-                    <!--        <p class="mx-auto mb-6 max-w-2xl text-lg text-gray-600">-->
-                    <!--          Contribute to the future of AI assistance with our desktop app. Download now and join our-->
-                    <!--          growing community.-->
-                    <!--        </p>-->
-                    <!--        <div class="flex justify-center">-->
-                    <!--          <ButtonCTA href="/download" class="inline-flex items-center gap-2">-->
-                    <!--            <Download class="h-5 w-5" />-->
-                    <!--            Download for Desktop-->
-                    <!--          </ButtonCTA>-->
-                    <!--        </div>-->
-                    <!--      </div>-->
-                    <!--    </
-                                  </div>
-                                </div>
-                              </div>
-                            </div>
+                    <h2 class="mb-4 text-3xl font-bold text-gray-900">Ready to get started?</h2>-->
+             <p class="mx-auto mb-6 max-w-2xl text-lg text-gray-600">-->
+                     Contribute to the future of AI assistance with our desktop app. Download now and join our-->
+                       growing community.-->
+                    </p>-->
+                          <div class="flex justify-center">-->
+                            <ButtonCTA href="/download" class="inline-flex items-center gap-2">-->
+                              <Download class="h-5 w-5" />-->
+                              Download for Desktop-->
+                            </ButtonCTA>-->
                           </div>
                         </div>
-
-<!--                         Ready to Get Started -->
+                    Ready to Get Started
                   </div>
                 </div>
               </div>
@@ -615,7 +606,6 @@
           </div>
         </div>
       </div>
-    </div>
   </section>
 
 <!-- //  FAQ Section-->

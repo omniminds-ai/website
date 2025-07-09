@@ -256,16 +256,16 @@
         <!--        <div class="hidden md:block">-->
         <!--          <WalletMultiButton />-->
         <!--        </div>-->
-        <!--        <a-->
-        <!--          href="/download"-->
-        <!--          class="group hidden items-center gap-3 rounded-full bg-gradient-to-r from-purple-600 to-blue-500 py-1.5 pl-4 pr-5 text-sm font-medium text-white shadow-lg shadow-purple-500/20 transition-all hover:scale-[1.02] hover:from-purple-500 hover:to-blue-400 hover:shadow-purple-500/30 sm:flex">-->
-        <!--          <div class="rounded-full bg-white/10 p-1">-->
-        <!--            <Download class="h-4 w-4 transition-transform group-hover:scale-110" />-->
-        <!--          </div>-->
-        <!--          <div class="flex items-center gap-2">-->
-        <!--            <span>Download for Desktop</span>-->
-        <!--          </div>-->
-        <!--        </a>-->
+                <a
+                  href="/download"
+                  class="group hidden items-center gap-3 rounded-full bg-gradient-to-r from-purple-600 to-blue-500 py-1.5 pl-4 pr-5 text-sm font-medium text-white shadow-lg shadow-purple-500/20 transition-all hover:scale-[1.02] hover:from-purple-500 hover:to-blue-400 hover:shadow-purple-500/30 sm:flex">
+                  <div class="rounded-full bg-white/10 p-1">
+                    <Download class="h-4 w-4 transition-transform group-hover:scale-110" />
+                  </div>
+                  <div class="flex items-center gap-2">
+                    <span>Download for Desktop</span>
+                  </div>
+                </a>
 
         <!-- Mobile menu button -->
         <button
@@ -376,14 +376,14 @@
           <!--            </a>-->
           <!--          </div>-->
 
-          <!--          <div class="mt-2 border-t border-gray-200 pt-4">-->
-          <!--            <a-->
-          <!--              href="/download"-->
-          <!--              class="flex items-center gap-3 rounded-lg bg-gradient-to-r from-purple-600 to-blue-500 px-4 py-2.5 text-white transition-all hover:from-purple-500 hover:to-blue-400">-->
-          <!--              <Download class="h-5 w-5 text-white/90" />-->
-          <!--              <span class="font-medium">Download for Desktop</span>-->
-          <!--            </a>-->
-          <!--          </div>-->
+                    <div class="mt-2 border-t border-gray-200 pt-4">
+                      <a
+                        href="/download"
+                        class="flex items-center gap-3 rounded-lg bg-gradient-to-r from-purple-600 to-blue-500 px-4 py-2.5 text-white transition-all hover:from-purple-500 hover:to-blue-400">
+                        <Download class="h-5 w-5 text-white/90" />
+                        <span class="font-medium">Download for Desktop</span>
+                      </a>
+                    </div>
 
           <!--          <div class="">-->
           <!--            <WalletMultiButton />-->

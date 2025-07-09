@@ -85,19 +85,19 @@
           Your unified platform for contributing to, training, and evaluating computer-use agents,
           all in one powerful desktop application.
         </p>
-<!--        <div class="flex flex-col justify-center gap-4 sm:flex-row">-->
-<!--          <ButtonCTA href="/download" class="inline-flex items-center gap-2">-->
-<!--            <Download class="h-5 w-5" />-->
-<!--            Download Now-->
-<!--          </ButtonCTA>-->
-<!--          <a-->
-<!--            href="https://github.com/omniminds-ai/vm-desktop"-->
-<!--            target="_blank"-->
-<!--            class="group inline-flex items-center gap-2 px-6 py-3 text-gray-900">-->
-<!--            <Github class="h-5 w-5" />-->
-<!--            <span class="animated-underline">View Source</span>-->
-<!--          </a>-->
-<!--        </div>-->
+        <div class="flex flex-col justify-center gap-4 sm:flex-row">
+          <ButtonCTA href="/download" class="inline-flex items-center gap-2">
+            <Download class="h-5 w-5" />
+            Download Now
+          </ButtonCTA>
+          <a
+            href="https://github.com/omniminds-ai/desktop"
+            target="_blank"
+            class="group inline-flex items-center gap-2 px-6 py-3 text-gray-900">
+            <Github class="h-5 w-5" />
+            <span class="animated-underline">View Source</span>
+          </a>
+        </div>
       </div>
 
       <div class="relative mt-16 overflow-hidden rounded-xl">
@@ -157,11 +157,11 @@
               class="inline-flex items-center gap-2 rounded-full bg-purple-600 px-6 py-3 text-white shadow transition-colors hover:bg-purple-700">
               Watch Demo
             </button>
-<!--            <a-->
-<!--              href="/download"-->
-<!--              class="inline-flex items-center gap-2 rounded-full border border-purple-600 bg-white px-6 py-3 text-purple-600 shadow transition-colors hover:bg-purple-50">-->
-<!--              Get Started-->
-<!--            </a>-->
+            <a
+              href="/download"
+              class="inline-flex items-center gap-2 rounded-full border border-purple-600 bg-white px-6 py-3 text-purple-600 shadow transition-colors hover:bg-purple-50">
+              Get Started
+            </a>
           </div>
           <VideoPopup videoSrc="https://drive.google.com/file/d/1w02RoN1MAQ0-WLEXFDRNNiJLGMaYoDNb/preview" bind:isOpen={showDemoVideo} />
         </div>
@@ -251,7 +251,7 @@
             <a
               href="/download"
               class="inline-block w-full rounded-lg bg-gradient-to-r from-purple-600 to-blue-500 px-6 py-3 text-center text-white transition-colors hover:from-purple-700 hover:to-blue-600">
-              Generate Training Gym
+              Generate Dojo
             </a>
           </div>
         </div>
@@ -288,7 +288,7 @@
                     class="mb-4 inline-flex h-16 w-16 items-center justify-center rounded-full bg-blue-100">
                     <Bot class="h-8 w-8 text-blue-600" />
                   </div>
-                  <h3 class="text-lg font-bold text-gray-900">Forge AI</h3>
+                  <h3 class="text-lg font-bold text-gray-900">Dojo AI</h3>
                   <p class="mt-2 text-sm text-gray-600">Generates diverse training scenarios</p>
                 </div>
               </div>
@@ -397,7 +397,7 @@
               <Split class="mb-2 h-10 w-10 text-gray-400" />
               <div
                 class="rounded-full border border-gray-200 bg-white px-4 py-2 text-sm font-medium text-gray-700 shadow-sm">
-                Better quality = more $TOKEN earned
+                Better quality = more rewards earned
               </div>
             </div>
           </div>
@@ -518,20 +518,20 @@
     </div>
   </section>
 
-  <!-- Download CTA -->
-<!--  <section class="bg-gradient-to-r from-purple-600 to-blue-600 py-20 text-white">-->
-<!--    <div class="mx-auto max-w-5xl px-4 text-center">-->
-<!--      <h2 class="mb-6 text-3xl font-bold">Ready to get started?</h2>-->
-<!--      <p class="mx-auto mb-8 max-w-2xl text-xl text-white/80">-->
-<!--        Download Viralmind Desktop today and join our community in pushing the boundaries of-->
-<!--        computer-use AI.-->
-<!--      </p>-->
-<!--      <a-->
-<!--        href="/download"-->
-<!--        class="inline-flex items-center gap-2 rounded-full bg-white px-8 py-4 text-lg font-medium text-purple-600 shadow-lg transition-colors hover:bg-gray-100">-->
-<!--        <Download class="h-5 w-5" />-->
-<!--        Download Now-->
-<!--      </a>-->
-<!--    </div>-->
-<!--  </section>-->
+<!--   Download CTA-->
+  <section class="bg-gradient-to-r from-purple-600 to-blue-600 py-20 text-white">
+    <div class="mx-auto max-w-5xl px-4 text-center">
+      <h2 class="mb-6 text-3xl font-bold">Ready to get started?</h2>
+      <p class="mx-auto mb-8 max-w-2xl text-xl text-white/80">
+        Download Omniminds Desktop today and join our community in pushing the boundaries of
+        computer-use AI.
+      </p>
+      <a
+        href="/download"
+        class="inline-flex items-center gap-2 rounded-full bg-white px-8 py-4 text-lg font-medium text-purple-600 shadow-lg transition-colors hover:bg-gray-100">
+        <Download class="h-5 w-5" />
+        Download Now
+      </a>
+    </div>
+  </section>
 </div>
