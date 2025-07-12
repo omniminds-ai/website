@@ -19,7 +19,6 @@
     ChevronUp
   } from 'lucide-svelte';
   import { onMount } from 'svelte';
-  import WalletMultiButton from '$lib/components/solana/WalletMultiButton.svelte';
   import { slide } from 'svelte/transition';
   import { afterNavigate } from '$app/navigation';
 
@@ -50,7 +49,7 @@
 
 <div class="fixed left-0 right-0 top-0 z-50 text-gray-600 transition-all duration-300">
   <div
-    class="absolute inset-0 border-b border-gray-200 bg-white/80 backdrop-blur-lg transition-opacity duration-300"
+    class="absolute inset-0 border-b border-gray-200 backdrop-blur-lg transition-opacity duration-300"
     class:opacity-0={!isScrolled}
     class:opacity-100={isScrolled}>
   </div>
@@ -66,7 +65,9 @@
             class="hidden w-8 transition-transform group-hover:scale-105 lg:block" />
           <img src={logoTitle} alt="OmniMinds" class="block h-14 transition-transform lg:hidden" />
         </a>
+      </div>
 
+      <!-- Middle -->
         <!-- Desktop Navigation -->
         <nav class="hidden items-center space-x-8 lg:flex">
           <!-- Ecosystem Dropdown -->
@@ -249,7 +250,6 @@
           <!--            {/if}-->
           <!--          </div>-->
         </nav>
-      </div>
 
       <!-- Right side -->
       <div class="flex items-center space-x-4">
@@ -258,12 +258,9 @@
         <!--        </div>-->
                 <a
                   href="/download"
-                  class="group hidden items-center gap-3 rounded-full bg-gradient-to-r from-purple-600 to-blue-500 py-1.5 pl-4 pr-5 text-sm font-medium text-white shadow-lg shadow-purple-500/20 transition-all hover:scale-[1.02] hover:from-purple-500 hover:to-blue-400 hover:shadow-purple-500/30 sm:flex">
-                  <div class="rounded-full bg-white/10 p-1">
-                    <Download class="h-4 w-4 transition-transform group-hover:scale-110" />
-                  </div>
+                  class="group hidden items-center gap-3 rounded-full bg-gradient-to-r from-secondary-100 to-secondary-200 py-3 px-5 text-white text-sm shadow-purple-500/20 transition-all hover:scale-[1.02] sm:flex">
                   <div class="flex items-center gap-2">
-                    <span>Download for Desktop</span>
+                    <span>Book a demo</span>
                   </div>
                 </a>
 
