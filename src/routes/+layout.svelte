@@ -48,13 +48,16 @@
 </svelte:head>
 
 <WalletProvider {localStorageKey} wallets={walletAdapters} autoConnect />
-<div class="bg-white">
+<div class="bg-primary-100">
   {#if isGymRoute}
     <GymHeader />
   {:else}
     <Navbar />
   {/if}
-  {@render children()}
+  <div>
+<div class="absolute top-[-55%] left-1/2 -translate-x-1/2 w-[964px] h-[1022px] rounded-full bg-secondary-100 blur-[300px] opacity-40"></div>
+{@render children()}
+</div>
   {#if !isTournamentRoute}
     <Footer />
   {/if}

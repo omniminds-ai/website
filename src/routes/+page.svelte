@@ -4,6 +4,7 @@
   import exampleUsage from '$lib/assets/exampleusage.mp4';
   import gym from '$lib/assets/gym.png';
   import ButtonCTA from '$lib/components/ButtonCTA.svelte';
+  import HeroSection from '$lib/components/HeroSection.svelte';
   import { onMount } from 'svelte';
 
   let copied = false;
@@ -135,65 +136,13 @@
   }
 </script>
 
-<div class="min-h-screen">
-  <!-- Hero Section -->
-  <section class="relative bg-white">
-    <div class="mx-auto max-w-7xl px-6 py-8 md:px-4 md:py-12">
-      <div class="grid items-start gap-4 lg:grid-cols-2">
-        <!-- Left Content -->
-        <div>
-          <img src={logo_full} alt="OmniMinds Logo" class="mb-6 hidden h-16 md:block" />
-          <img src={logo} alt="OmniMinds Logo" class="mb-6 block h-16 md:hidden" />
-          <h1 class="mb-4 text-5xl font-bold">
-            <span
-              class="bg-gradient-to-r from-purple-600 to-purple-500 bg-clip-text text-transparent">
-              Computer-Use AI for everyone.
-            </span>
-          </h1>
-          <h2 class="mb-6 text-2xl font-semibold text-gray-800">
-            We believe we can create a revolution.
-          </h2>
-          <p class="mb-6 text-xl text-gray-600">
-            <!-- Join us in pioneering the future of AI through crowdsourced computer-use demonstrations. We're accelerating frontier AI with open-source datasets and tools, making powerful computer-use agents accessible to everyone. -->
-            Building the foundation for powerful computer-use agents through crowdsourced action datasets,
-            open-source tools, and frontier agent models. We want to improve the world by providing amazing
-            computer-use agents.
-          </p>
-          <div class="flex flex-col gap-4">
-            <div class="flex flex-col items-center gap-4 sm:flex-row">
-              <a
-                href="https://t.me/omnimindsai"
-                target="_blank"
-                class="inline-flex items-center gap-2 rounded-full bg-gradient-to-r from-purple-600 to-purple-500 px-6 py-3 text-white transition-colors hover:from-purple-700 hover:to-purple-600">
-                <svg class="h-12 w-12" viewBox="0 0 24 24" fill="#FFF">
-                  <path
-                    d="M12 4C10.4178 4 8.87103 4.46919 7.55544 5.34824C6.23985 6.22729 5.21447 7.47672 4.60897 8.93853C4.00347 10.4003 3.84504 12.0089 4.15372 13.5607C4.4624 15.1126 5.22433 16.538 6.34315 17.6569C7.46197 18.7757 8.88743 19.5376 10.4393 19.8463C11.9911 20.155 13.5997 19.9965 15.0615 19.391C16.5233 18.7855 17.7727 17.7602 18.6518 16.4446C19.5308 15.129 20 13.5823 20 12C20 9.87827 19.1571 7.84344 17.6569 6.34315C16.1566 4.84285 14.1217 4 12 4ZM15.93 9.48L14.62 15.67C14.52 16.11 14.26 16.21 13.89 16.01L11.89 14.53L10.89 15.46C10.8429 15.5215 10.7824 15.5715 10.7131 15.6062C10.6438 15.6408 10.5675 15.6592 10.49 15.66L10.63 13.66L14.33 10.31C14.5 10.17 14.33 10.09 14.09 10.23L9.55 13.08L7.55 12.46C7.12 12.33 7.11 12.03 7.64 11.83L15.35 8.83C15.73 8.72 16.05 8.94 15.93 9.48Z" />
-                </svg>
+<!-- Hero Section -->
+ <HeroSection />
 
-                Join Telegram
-              </a>
-              <!--              <a-->
-              <!--                href="https://github.com/omni/desktop"-->
-              <!--                target="_blank"-->
-              <!--                class="group inline-flex items-center gap-2 px-6 py-3 text-gray-900">-->
-              <!--                <Star class="h-5 w-5" />-->
-              <!--                <span class="animated-underline">Star on GitHub</span>-->
-              <!--              </a>-->
-            </div>
-          </div>
-        </div>
-
-        <!-- Right Content -->
-        <div class="relative bottom-0 overflow-x-hidden rounded-xl">
-          <video src={exampleUsage} autoplay loop muted playsinline class=" -mr-[25%] w-[155%]">
-          </video>
-        </div>
-      </div>
-    </div>
-  </section>
-
+<!-- Rest of the page with light background -->
+<div class="bg-white">
   <!-- Download Section -->
-  <section class="bg-gray-100 py-20">
+  <section class="py-20">
     <div class="mx-auto max-w-6xl px-4 text-center">
       <h2 class="mb-4 text-4xl font-bold text-gray-900">AI agents built from your data</h2>
       <p class="mb-8 text-xl text-gray-600">Start earning while contributing skills</p>
@@ -216,7 +165,7 @@
   </section>
 
   <!-- Features Section -->
-  <section class="bg-gray-50">
+  <section>
     <div class="mx-auto flex max-w-6xl flex-col gap-24 px-4 py-12">
       <!-- Training Gym -->
       <div class="mb-20 grid items-center gap-12 lg:grid-cols-2">
@@ -609,7 +558,7 @@
   </section>
 
 <!-- //  FAQ Section-->
-    <section class="bg-gray-100 py-20">
+    <section class="py-20">
       <div class="mx-auto max-w-6xl px-4">
         <h2 class="mb-12 text-center text-4xl font-bold text-gray-900">Frequently Asked Questions</h2>
 
