@@ -1,19 +1,17 @@
 <script lang="ts">
     import exampleUsage from '$lib/assets/exampleusage.mp4';
+    import GradientHeading from './GradientHeading.svelte';
 </script>
-<section class="relative min-h-screen overflow-hidden">
-  
-  <!-- Gradient Wave Overlay for depth -->
-  <div class="absolute bottom-0 left-0 w-full h-96 bg-gradient-to-t from-slate-900/60 to-transparent z-10"></div>
 
+<section class="relative min-h-screen overflow-hidden">
   <!-- Main Content Container -->
   <div class="relative z-20 flex flex-col items-center min-h-screen px-6 py-20">
     <!-- Header Content -->
     <div class="text-center mb-12 max-w-4xl">
-      <h1 class="text-5xl bg-gradient-to-b from-white/60 to-white bg-clip-text text-transparent mb-6 leading-tight">
+      <GradientHeading class="text-5xl">
         Computer-Use AI
         for everyone.
-      </h1>
+      </GradientHeading>
       
       <p class="text-xl text-white/70 mb-8 max-w-2xl mx-auto">
         We believe we can create a revolution.
