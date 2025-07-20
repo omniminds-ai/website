@@ -1,0 +1,201 @@
+<script lang="ts">
+  import { onMount } from 'svelte';
+  import { ChevronRight, ChevronLeft } from 'lucide-svelte';
+
+  // Define the testimonial type
+  type Testimonial = {
+    text: string;
+    author: string;
+    title: string;
+    company: string;
+    avatar: string;
+    logo?: string;
+  };
+
+  // Sample testimonial data - replace with your actual data
+  const testimonials: Testimonial[] = [
+    {
+      text: "We loved their documentation from the start, when evaluating vendors. Super developer friendly. Within less than 2 weeks we launched our first integrations to Slack, Hubspot and Salesforce.",
+      author: "Raphael Allstadt",
+      title: "Co-Founder & CEO",
+      company: "tl;dv",
+      avatar: "/path/to/raphael.jpg",
+      logo: "/path/to/tldv-logo.png"
+    },
+    {
+      text: "OMNI is really easy to use, easy to implement, has solid documentation for you to follow, and has been incredible at supporting us along the way.",
+      author: "Chris Lu",
+      title: "Co Founder and CTO",
+      company: "copy.ai",
+      avatar: "/path/to/chris.jpg",
+      logo: "/path/to/copyai-logo.png"
+    },
+    {
+      text: "Easy to replace our legacy integration using OMNI. We needed two codebases, and have seen tremendous results with our implementation.",
+      author: "Sarah Johnson",
+      title: "VP of Information Security",
+      company: "",
+      avatar: "/path/to/sarah.jpg"
+    },
+    {
+      text: "The platform has helped us scale our operations without increasing headcount. Fantastic support team that responds quickly to all our questions.",
+      author: "Michael Chen",
+      title: "Director of Operations",
+      company: "TechFlow",
+      avatar: "/path/to/michael.jpg"
+    }
+  ];
+
+  let currentSlide = 0;
+  let autoplayInterval: ReturnType<typeof setInterval>;
+  let isPaused = false;
+
+  function nextSlide() {
+    currentSlide = (currentSlide + 1) % testimonials.length;
+  }
+
+  function prevSlide() {
+    currentSlide = (currentSlide - 1 + testimonials.length) % testimonials.length;
+  }
+
+  function startAutoplay() {
+    clearInterval(autoplayInterval);
+    if (!isPaused) {
+      autoplayInterval = setInterval(nextSlide, 8000);
+    }
+  }
+
+  function pauseAutoplay() {
+    isPaused = true;
+    clearInterval(autoplayInterval);
+  }
+
+  function resumeAutoplay() {
+    isPaused = false;
+    startAutoplay();
+  }
+
+  onMount(() => {
+    startAutoplay();
+    return () => clearInterval(autoplayInterval);
+  });
+</script>
+
+<div class="py-16 bg-[#080314]">
+  <div class="max-w-6xl mx-auto px-4">
+    <h2 class="text-4xl font-bold text-center text-white mb-4">
+      Why people love Omniminds
+    </h2>
+    <p class="text-center text-gray-400 mb-16">
+      Lorem ipsum dolor sit amet, consectetur
+    </p>
+
+    <!-- svelte-ignore a11y_no_static_element_interactions -->
+    <div
+      class="group/carousel relative mb-16"
+      on:mouseenter={pauseAutoplay}
+      on:mouseleave={resumeAutoplay}
+    >
+      <div class="relative flex justify-center">
+        <!-- Testimonial Cards -->
+        {#each testimonials as testimonial, i}
+          <div
+            class="absolute w-full md:w-[32%] rounded-2xl bg-[#0F0A1E] p-8 transition-all duration-700 ease-in-out"
+            style="opacity: {i === currentSlide ? 1 : 0}; 
+                  transform: scale({i === currentSlide ? 1 : 0.95}) 
+                  translateX({(i - currentSlide) * 120}%); 
+                  pointer-events: {i === currentSlide ? 'auto' : 'none'}"
+          >
+            <!-- Company logo if available -->
+            {#if testimonial.company}
+              <div class="mb-4 h-6">
+                {#if testimonial.logo}
+                  <img src={testimonial.logo} alt={testimonial.company} class="h-full" />
+                {:else}
+                  <span class="text-gray-400 text-sm">{testimonial.company}</span>
+                {/if}
+              </div>
+            {/if}
+
+            <!-- Testimonial text -->
+            <div class="mb-6">
+              <p class="text-white text-lg">"{testimonial.text}"</p>
+            </div>
+            
+            <!-- Author info -->
+            <div class="flex items-center mt-6">
+              <div class="h-12 w-12 rounded-full mr-4 overflow-hidden">
+                <img 
+                  src={testimonial.avatar} 
+                  alt={testimonial.author} 
+                  class="h-full w-full object-cover"
+                />
+              </div>
+              <div>
+                <h4 class="font-medium text-white">
+                  {testimonial.author}
+                </h4>
+                <p class="text-gray-400 text-sm">
+                  {testimonial.title}
+                  {testimonial.company && (
+                    <span class="ml-1 text-gray-400 text-sm">
+                      • {testimonial.company}
+                    </span>
+                  )}
+                </p>
+              </div>
+            </div>
+            
+            <!-- Read Case Study button -->
+            <div class="mt-6">
+              <a href="#{testimonial.company}" class="text-purple-400 flex items-center text-sm">
+                Read Case Study 
+                <svg 
+                  class="w-4 h-4 ml-1" 
+                  fill="none" 
+                  stroke="currentColor" 
+                  viewBox="0 0 24 24" 
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path 
+                    stroke-linecap="round" 
+                    stroke-linejoin="round" 
+                    stroke-width={2} 
+                    d="M9 5l7 7-7 7" 
+                  />
+                </svg>
+              </a>
+            </div>
+          </div>
+        {/each}
+
+        <!-- Navigation Buttons -->
+        <button
+          class="absolute left-4 top-1/2 -translate-y-1/2 text-white opacity-0 transition-opacity duration-300 hover:text-white group-hover/carousel:opacity-40 hover:opacity-100 z-10"
+          on:click={prevSlide}
+        >
+          <ChevronLeft class="h-12 w-12" />
+        </button>
+        <button
+          class="absolute right-4 top-1/2 -translate-y-1/2 text-white opacity-0 transition-opacity duration-300 hover:text-white group-hover/carousel:opacity-40 hover:opacity-100 z-10"
+          on:click={nextSlide}
+        >
+          <ChevronRight class="h-12 w-12" />
+        </button>
+      </div>
+
+      <!-- Dots -->
+      <div class="absolute -bottom-8 left-1/2 flex -translate-x-1/2 gap-3">
+        {#each testimonials as _, i}
+          <button
+            aria-label="change-slide"
+            class="h-1.5 rounded-full transition-all duration-300 {i === currentSlide
+              ? 'w-6 bg-white'
+              : 'w-1.5 bg-white/50 hover:bg-white/75'}"
+            on:click={() => (currentSlide = i)}
+          ></button>
+        {/each}
+      </div>
+    </div>
+  </div>
+</div>

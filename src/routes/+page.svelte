@@ -6,6 +6,7 @@
   import ButtonCTA from '$lib/components/ButtonCTA.svelte';
   import HeroSection from '$lib/components/HeroSection.svelte';
   import GradientHeading from '$lib/components/GradientHeading.svelte';
+  import ParticlesBackground from '$lib/components/ParticlesBackground.svelte';
   import { onMount } from 'svelte';
 
   let copied = false;
@@ -140,183 +141,253 @@
 <!-- Hero Section -->
 <HeroSection />
 
-<!-- Features Section -->
-<section>
-  <div class="mx-auto flex max-w-7xl flex-col gap-24 px-4 py-12">
-    <!-- Training Gym -->
-    <GradientHeading class="text-4xl">AI agents built from your data</GradientHeading>
-    <div class="mb-20 grid items-center gap-12 lg:grid-cols-2">
-      <div class="border-l-4 border-l-secondary-100 ps-6 text-left">
-        <GradientHeading class="text-2xl">Earn $OMNIS by sharing data</GradientHeading>
-        <GradientHeading class="text-md mb-6">
-          Show AI how to use apps, earn rewards. Get instant $OMNIS payments when you upload
-          demonstrations.
-        </GradientHeading>
-        <button
-          on:click={() => {
-            showTrainingVideo = true;
-          }}
-          class="inline-flex items-center gap-2 rounded-full border px-6 py-3 text-white">
-          <PlayCircle class="h-5 w-5" />
-          Watch Demo
-        </button>
-        <VideoPopup
-          videoSrc="https://drive.google.com/file/d/1w02RoN1MAQ0-WLEXFDRNNiJLGMaYoDNb/preview"
-          bind:isOpen={showTrainingVideo} />
-      </div>
-      <div class="relative overflow-hidden rounded bg-gray-100 shadow-2xl">
-        <img src={gym} alt="Arena Demo" class="h-full w-full object-cover" />
+<div class="space-y-52">
+  <!-- Features Section -->
+  <section>
+    <div class="mx-auto flex max-w-7xl flex-col gap-24 px-4">
+      <!-- Training Gym -->
+      <GradientHeading class="text-4xl">AI agents built from your data</GradientHeading>
+      <div class="grid items-center gap-12 lg:grid-cols-2">
+        <div class="border-l-4 border-l-secondary-100 ps-6 text-left">
+          <GradientHeading class="text-2xl">Earn $OMNIS by sharing data</GradientHeading>
+          <GradientHeading class="text-md mb-6">
+            Show AI how to use apps, earn rewards. Get instant $OMNIS payments when you upload
+            demonstrations.
+          </GradientHeading>
+          <button
+            on:click={() => {
+              showTrainingVideo = true;
+            }}
+            class="inline-flex items-center gap-2 rounded-full border px-6 py-3 text-white">
+            <PlayCircle class="h-5 w-5" />
+            Watch Demo
+          </button>
+          <VideoPopup
+            videoSrc="https://drive.google.com/file/d/1w02RoN1MAQ0-WLEXFDRNNiJLGMaYoDNb/preview"
+            bind:isOpen={showTrainingVideo} />
+        </div>
+        <div class="relative overflow-hidden rounded bg-gray-100 shadow-2xl">
+          <img src={gym} alt="Arena Demo" class="h-full w-full object-cover" />
+        </div>
       </div>
     </div>
-  </div>
-</section>
-
-<section>
-  <div class="mx-auto flex max-w-7xl flex-col gap-24 px-4 py-12">
-    <!-- Training Gym -->
-    <GradientHeading class="mx-auto max-w-[400px] text-3xl">
-      Purpose-built products to implement every use case
-    </GradientHeading>
-    <div class="mb-20 grid items-center gap-12 lg:grid-cols-2">
-      <div class="flex flex-col items-center rounded-2xl border p-10 h-full">
-        <GradientHeading class="text-2xl">The Dojo</GradientHeading>
-        <GradientHeading class="text-md mb-6 text-center">
-          Specify your AI needs, we'll handle the rest. Quality demonstrations at scale train your
-          specialized agent.
-        </GradientHeading>
-        <button
-          on:click={() => {
-            showTrainingVideo = true;
-          }}
-          class="mb-8 inline-flex items-center gap-2 rounded-full border px-6 py-3 text-white">
-          <PlayCircle class="h-5 w-5" />
-          Watch Demo
-        </button>
-
-        <!-- Dream Agent Section -->
-        <div class="w-full max-w-md rounded-2xl border border-secondary-300 p-6">
-          <h3 class="mb-4 text-lg font-medium text-white">Describe your dream agent</h3>
-
-          <div class="mb-6">
-            <input
-              type="text"
-              placeholder="An agent that can manage my email inbox..."
-              class="w-full rounded-xl border border-secondary-300 bg-transparent p-2 text-white placeholder-gray-400 transition-colors focus:border-blue-500 focus:outline-none" />
-          </div>
-
-          <div class="space-y-4">
-            <h4 class="text-sm font-medium text-white">Estimated Requirements</h4>
-
-            <div class="flex items-start justify-between">
-              <div class="text-center">
-                <div class="mb-1 text-3xl font-bold text-secondary-300">64,637</div>
-                <div class="text-sm text-gray-400">$OMNIS Required</div>
+  </section>
+  
+  <section>
+    <div class="mx-auto flex max-w-7xl flex-col gap-24 px-4">
+      <!-- Training Gym -->
+      <GradientHeading class="mx-auto max-w-[400px] text-3xl">
+        Purpose-built products to implement every use case
+      </GradientHeading>
+      <div class="grid items-center gap-12 lg:grid-cols-2">
+        <div class="flex h-full flex-col items-center rounded-2xl border p-10">
+          <GradientHeading class="text-2xl">The Dojo</GradientHeading>
+          <GradientHeading class="text-md mb-6 text-center">
+            Specify your AI needs, we'll handle the rest. Quality demonstrations at scale train your
+            specialized agent.
+          </GradientHeading>
+          <button
+            on:click={() => {
+              showTrainingVideo = true;
+            }}
+            class="mb-8 inline-flex items-center gap-2 rounded-full border px-6 py-3 text-white">
+            <PlayCircle class="h-5 w-5" />
+            Watch Demo
+          </button>
+  
+          <!-- Dream Agent Section -->
+          <div class="w-full max-w-md rounded-2xl border border-secondary-300 p-6">
+            <h3 class="mb-4 text-lg font-medium text-white">Describe your dream agent</h3>
+  
+            <div class="mb-6">
+              <input
+                type="text"
+                placeholder="An agent that can manage my email inbox..."
+                class="w-full rounded-xl border border-secondary-300 bg-transparent p-2 text-white placeholder-gray-400 transition-colors focus:border-blue-500 focus:outline-none" />
+            </div>
+  
+            <div class="space-y-4">
+              <h4 class="text-sm font-medium text-white">Estimated Requirements</h4>
+  
+              <div class="flex items-start justify-between">
+                <div class="text-center">
+                  <div class="mb-1 text-3xl font-bold text-secondary-300">64,637</div>
+                  <div class="text-sm text-gray-400">$OMNIS Required</div>
+                </div>
+                <div class="text-center">
+                  <div class="mb-1 text-3xl font-bold text-secondary-300">11,969</div>
+                  <div class="text-sm text-gray-400">Demonstrations</div>
+                </div>
               </div>
-              <div class="text-center">
-                <div class="mb-1 text-3xl font-bold text-secondary-300">11,969</div>
-                <div class="text-sm text-gray-400">Demonstrations</div>
+  
+              <div class="mt-4 text-sm text-gray-400">At 5.4 $OMNIS per demonstration</div>
+            </div>
+          </div>
+        </div>
+  
+        <div class="flex h-full flex-col items-center rounded-2xl border p-10">
+          <GradientHeading class="text-2xl">Computer Use Agent</GradientHeading>
+          <GradientHeading class="text-md mb-6 text-center">
+            Complete computer tasks with a state-of-the-art computer-use agent trained with the data
+            generated by the community.
+          </GradientHeading>
+          <button
+            on:click={() => {
+              showTrainingVideo = true;
+            }}
+            class="mb-8 inline-flex items-center gap-2 rounded-full border px-6 py-3 text-white">
+            <PlayCircle class="h-5 w-5" />
+            Watch Demo
+          </button>
+  
+          <!-- Chat Interface -->
+          <div class="w-full max-w-md space-y-3 rounded-2xl border border-secondary-300 p-4">
+            <!-- Assistant message -->
+            <div class="flex items-start gap-3">
+              <div class="h-8 w-8 flex-shrink-0 rounded-full bg-purple-500"></div>
+              <div class="max-w-xs rounded-2xl bg-purple-600/30 px-4 py-3">
+                <p class="text-sm text-white">
+                  Hi! I'm your computer-use assistant. What would you like help with?
+                </p>
               </div>
             </div>
-
-            <div class="mt-4 text-sm text-gray-400">
-              At 5.4 $OMNIS per demonstration
+  
+            <!-- User message -->
+            <div class="flex items-start justify-end gap-3">
+              <div class="max-w-xs rounded-2xl bg-gray-700 px-4 py-3">
+                <p class="text-sm text-white">
+                  Can you help me find a good Italian restaurant nearby that's open late?
+                </p>
+              </div>
+              <div
+                class="flex h-8 w-8 flex-shrink-0 items-center justify-center rounded-full bg-blue-500">
+              </div>
+            </div>
+  
+            <!-- Assistant response -->
+            <div class="flex items-start gap-3">
+              <div class="h-8 w-8 flex-shrink-0 rounded-full bg-purple-500"></div>
+              <div class="max-w-xs rounded-2xl bg-purple-600/30 px-4 py-3">
+                <p class="text-sm text-white">
+                  I'll help you find a great Italian spot! Let me check DoorDash for you.
+                </p>
+              </div>
             </div>
           </div>
         </div>
       </div>
-
-      <div class="flex flex-col items-center rounded-2xl border p-10 h-full">
-        <GradientHeading class="text-2xl">Computer Use Agent</GradientHeading>
-        <GradientHeading class="text-md mb-6 text-center">
-          Complete computer tasks with a state-of-the-art computer-use agent trained with the data
-          generated by the community.
-        </GradientHeading>
-        <button
-          on:click={() => {
-            showTrainingVideo = true;
-          }}
-          class="mb-8 inline-flex items-center gap-2 rounded-full border px-6 py-3 text-white">
-          <PlayCircle class="h-5 w-5" />
-          Watch Demo
-        </button>
-
-        <!-- Chat Interface -->
-        <div
-          class="w-full max-w-md space-y-3 rounded-2xl border border-secondary-300 p-4">
-          <!-- Assistant message -->
-          <div class="flex items-start gap-3">
-            <div class="h-8 w-8 flex-shrink-0 rounded-full bg-purple-500"></div>
-            <div class="max-w-xs rounded-2xl bg-purple-600/30 px-4 py-3">
-              <p class="text-sm text-white">
-                Hi! I'm your computer-use assistant. What would you like help with?
-              </p>
-            </div>
-          </div>
-
-          <!-- User message -->
-          <div class="flex items-start justify-end gap-3">
-            <div class="max-w-xs rounded-2xl bg-gray-700 px-4 py-3">
-              <p class="text-sm text-white">
-                Can you help me find a good Italian restaurant nearby that's open late?
-              </p>
-            </div>
-            <div class="h-8 w-8 flex-shrink-0 rounded-full bg-blue-500 flex justify-center items-center"></div>
-          </div>
-
-          <!-- Assistant response -->
-          <div class="flex items-start gap-3">
-            <div class="h-8 w-8 flex-shrink-0 rounded-full bg-purple-500"></div>
-            <div class="max-w-xs rounded-2xl bg-purple-600/30 px-4 py-3">
-              <p class="text-sm text-white">
-                I'll help you find a great Italian spot! Let me check DoorDash for you.
-              </p>
-            </div>
-          </div>
-        </div>
-      </div>
     </div>
-  </div>
-</section>
-
-<!-- Explore the platform section -->
-<div class="glass-effect border border-gray-900 flex items-center mx-auto max-w-7xl p-16 rounded-2xl">
-  <!-- Left side content -->
-  <div class="flex-1">
-    <GradientHeading class="text-4xl mb-6">Explore the platform</GradientHeading>
-    <GradientHeading class="text-lg mb-8">
-      Get instant $OMNIS payments when you upload demonstrations.
-    </GradientHeading>
-    <button class="bg-purple-600 hover:bg-purple-700 text-white px-8 py-3 rounded-full font-medium transition-colors">
-      Explore Now
-    </button>
-  </div>
-
-  <!-- Right side - Platform mockup -->
-  <div class="flex-1 flex justify-center">
-    <img src={gym} alt="Arena Demo" class="h-full" />
-  </div>
-</div>
-
-<!-- Ready to get started? -->
- <div class="glass-effect border border-gray-900 mx-auto max-w-7xl p-16 rounded-2xl flex flex-col justify-center items-center">
-  <!-- Left side content -->
-    <GradientHeading class="text-4xl mb-6">Ready to get started?</GradientHeading>
-    <GradientHeading class="text-lg mb-8">
-      Get instant $OMNIS payments when you upload demonstrations.
-    </GradientHeading>
-    <div class="flex gap-4">    
-      <button class="bg-secondary-100 text-white px-8 py-3 rounded-full transition-colors">
-        Signup for free
-      </button>
-
-      <button class="text-secondary-100">
-        Book demo
+  </section>
+  
+  <!-- Explore the platform section -->
+   <section>
+    <div
+    class="glass-effect mx-auto flex max-w-7xl items-center rounded-2xl border border-gray-900 p-16">
+    <!-- Left side content -->
+    <div class="flex-1">
+      <GradientHeading class="mb-6 text-4xl">Explore the platform</GradientHeading>
+      <GradientHeading class="mb-8 text-lg">
+        Get instant $OMNIS payments when you upload demonstrations.
+      </GradientHeading>
+      <button
+        class="rounded-full bg-purple-600 px-8 py-3 font-medium text-white transition-colors hover:bg-purple-700">
+        Explore Now
       </button>
     </div>
+  
+    <!-- Right side - Platform mockup -->
+    <div class="flex flex-1 justify-center">
+      <img src={gym} alt="Arena Demo" class="h-full" />
+    </div>
+  </div>
+   </section>
+  
+  
+  <!-- Testimonials -->
+   <section>
+     <div class="flex">
+       <div
+         class="glass-effect mx-auto flex flex-col items-center justify-center rounded-2xl border border-gray-900 p-16 flex-1">
+         <!-- Left side content -->
+         <GradientHeading class="mb-6 text-4xl">Logo</GradientHeading>
+         <GradientHeading class="mb-8 text-lg">
+           " Get instant $OMNIS payments when you upload demonstrations.Get instant $OMNIS payments when
+           you upload demonstrations.Get instant $OMNIS payments when you upload demonstrations."
+         </GradientHeading>
+         <div class="flex">
+           <div class="h-20 w-20 rounded-full"></div>
+           <div class="text-white flex flex-col">
+             <span>Raphael Allstadt</span>
+             <span>Co-Founder & CEO</span>
+           </div>
+         </div>
+     
+         <button class="text-secondary-100">Read Case Study</button>
+       </div>
+       <div
+         class="glass-effect mx-auto flex flex-col items-center justify-center rounded-2xl border border-gray-900 p-16 flex-1">
+         <!-- Left side content -->
+         <GradientHeading class="mb-6 text-4xl">Logo</GradientHeading>
+         <GradientHeading class="mb-8 text-lg">
+           " Get instant $OMNIS payments when you upload demonstrations.Get instant $OMNIS payments when
+           you upload demonstrations.Get instant $OMNIS payments when you upload demonstrations."
+         </GradientHeading>
+         <div class="flex">
+           <div class="h-20 w-20 rounded-full"></div>
+           <div class="text-white flex flex-col">
+             <span>Raphael Allstadt</span>
+             <span>Co-Founder & CEO</span>
+           </div>
+         </div>
+     
+         <button class="text-secondary-100">Read Case Study</button>
+       </div>
+       <div
+         class="glass-effect mx-auto flex flex-col items-center justify-center rounded-2xl border border-gray-900 p-16 flex-1">
+         <!-- Left side content -->
+         <GradientHeading class="mb-6 text-4xl">Logo</GradientHeading>
+         <GradientHeading class="mb-8 text-lg">
+           " Get instant $OMNIS payments when you upload demonstrations.Get instant $OMNIS payments when
+           you upload demonstrations.Get instant $OMNIS payments when you upload demonstrations."
+         </GradientHeading>
+         <div class="flex">
+           <div class="h-20 w-20 rounded-full"></div>
+           <div class="text-white flex flex-col">
+             <span>Raphael Allstadt</span>
+             <span>Co-Founder & CEO</span>
+           </div>
+         </div>
+     
+         <button class="text-secondary-100">Read Case Study</button>
+       </div>
+     </div>
+   </section>
+  
+  <!-- Ready to get started? -->
+   <section>
+     <div
+       class="glass-effect mx-auto flex max-w-7xl flex-col items-center justify-center rounded-2xl border border-gray-900 p-16">
+       <!-- Left side content -->
+       <GradientHeading class="mb-6 text-4xl">Ready to get started?</GradientHeading>
+       <GradientHeading class="mb-8 text-lg">
+         Get instant $OMNIS payments when you upload demonstrations.
+       </GradientHeading>
+       <div class="flex gap-4">
+         <button class="rounded-full bg-secondary-100 px-8 py-3 text-white transition-colors">
+           Signup for free
+         </button>
+     
+         <button class="text-secondary-100">Book demo</button>
+       </div>
+     </div>
+   </section>
 </div>
 
 <style>
-  .glass-effect {
-    box-shadow: inset 0px 10px 84px #5C3AE414;
-  }
+.glass-effect {
+  box-shadow: 
+    inset 0px 32px 64px rgba(92, 58, 228, 0.08),
+    inset 1px 1px 1px rgba(92, 58, 228, 0.5),
+    inset 0px 0px 1px rgba(255, 255, 255, 0.4);
+}
 </style>

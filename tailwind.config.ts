@@ -25,7 +25,7 @@ export default {
         },
         accent: {
           100: '#ffffff',
-          200: '#f1f1f1',
+          200: '#AAA9B3',
           300: '#e4e4e4',
           400: '#cdcdcd',
           500: '#bdbdbd',

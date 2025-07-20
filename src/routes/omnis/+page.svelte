@@ -16,6 +16,7 @@
   } from 'lucide-svelte';
   import ButtonCta from '$lib/components/ButtonCTA.svelte';
   import OmnisMetrics from '$lib/components/OmniMetrics.svelte';
+  import GradientHeading from '$lib/components/GradientHeading.svelte';
 
   const lockContractAddress =
     'https://lock.jup.ag/token/G6iRK8kN67HJFrPA1CDA5KZaPJMiBu3bqdd9vdKBpump';
@@ -63,24 +64,21 @@
 
 <main class="min-h-screen">
   <!-- Hero Section -->
-  <div class="bg-white py-24">
+  <div class="py-24">
     <div class="mx-auto max-w-7xl px-4 text-center sm:px-8 lg:px-16">
-      <h1
-        class="mb-4 bg-gradient-to-r from-purple-600 to-blue-500 bg-clip-text text-5xl font-bold text-transparent md:text-6xl">
-        $OMNIS Token
-      </h1>
-      <p class="mb-8 text-xl text-gray-600">
+      <GradientHeading class="text-5xl md:text-6xl">$OMNIS Token</GradientHeading>
+      <GradientHeading class="mb-8 text-xl text-gray-600">
         Incentivizing high-quality AI training data at scale through instant, quality-based rewards.
-      </p>
+      </GradientHeading>
       <div class="flex flex-col items-center justify-center gap-6 md:flex-row">
         <div
-          class="flex w-full items-center justify-center gap-3 rounded-full border-2 bg-gray-50 px-6 py-2 md:w-1/2">
+          class="flex w-full items-center justify-center gap-3 rounded-full border border-secondary-300 px-6 py-2 md:w-1/2">
           <input
             type="text"
             readonly
             value={TOKEN_DATA.contractAddress}
             on:click={handleInputClick}
-            class="w-full cursor-pointer truncate bg-transparent font-mono text-gray-900 outline-none hover:text-gray-500" />
+            class="w-full cursor-pointer truncate bg-transparent font-mono text-white outline-none hover:text-gray-500" />
           <button
             class="rounded-lg p-2 text-gray-500 transition-colors hover:bg-gray-100 hover:text-gray-900"
             on:click={copyAddress}>
@@ -92,40 +90,45 @@
           </button>
         </div>
         <ButtonCta href={TOKEN_DATA.dexscreenerUrl} target="_blank">
-          <Coins class="h-5 w-5" />
           Trade $OMNIS
         </ButtonCta>
       </div>
     </div>
 
     <!-- Get Started Section -->
-    <section class="mt-16 bg-white">
+    <section class="mt-16">
       <div class="mx-auto max-w-7xl px-4 sm:px-8 lg:px-16">
-        <div class="grid gap-20 md:grid-cols-3">
+        <div class="grid gap-10 md:grid-cols-3">
           <!-- How to Earn -->
-          <div>
-            <h3 class="mb-6 text-xl font-bold text-gray-900">How do I earn $OMNIS?</h3>
-            <p class="mb-6 text-gray-600">
+          <div class="glass-effect mx-auto rounded-2xl border border-gray-900 p-8">
+            <GradientHeading class="mb-6 text-xl font-bold text-gray-900">
+              How do I earn $OMNIS?
+            </GradientHeading>
+            <GradientHeading class="mb-6 text-gray-600">
               Use the Training Gym to earn tokens by providing AI training data. Rewards scale with
               data quality.
-            </p>
+            </GradientHeading>
           </div>
 
           <!-- How to Spend -->
-          <div>
-            <h3 class="mb-6 text-xl font-bold text-gray-900">How do I spend $OMNIS?</h3>
-            <p class="mb-6 text-gray-600">
+          <div class="glass-effect mx-auto rounded-2xl border border-gray-900 p-8">
+            <GradientHeading class="mb-6 text-xl font-bold text-gray-900">
+              How do I spend $OMNIS?
+            </GradientHeading>
+            <GradientHeading class="mb-6 text-gray-600">
               Create your own training gyms and fund reward pools. Export gym data to train
               specialized agents.
-            </p>
+            </GradientHeading>
           </div>
 
           <!-- How to Trade -->
-          <div>
-            <h3 class="mb-6 text-xl font-bold text-gray-900">Where do I trade $OMNIS?</h3>
-            <p class="mb-2 text-gray-600">
+          <div class="glass-effect mx-auto rounded-2xl border border-gray-900 p-8">
+            <GradientHeading class="mb-6 text-xl font-bold text-gray-900">
+              Where do I trade $OMNIS?
+            </GradientHeading>
+            <GradientHeading class="mb-2 text-gray-600">
               Buy or sell $OMNIS with $USDC or $SOL through secure exchanges:
-            </p>
+            </GradientHeading>
             <a
               href={TOKEN_DATA.dexscreenerUrl}
               target="_blank"
@@ -138,417 +141,327 @@
       </div>
     </section>
 
-    <div class="bg-white py-16">
+    <div class="py-16">
       <div class="mx-auto max-w-7xl px-4 sm:px-8 lg:px-16">
         <OmnisMetrics />
       </div>
     </div>
 
     <!-- Tokenomics Section -->
-    <section class="bg-gradient-to-b from-white to-purple-50/30 py-24">
-      <div class="mx-auto max-w-7xl px-4 sm:px-8 lg:px-16">
-        <h2
-          class="mb-16 bg-gradient-to-r from-purple-600 to-blue-500 bg-clip-text text-center text-4xl font-bold text-transparent">
-          Tokenomics
-        </h2>
+    <section class="py-24">
+      <div class="mx-auto px-4 sm:px-8 lg:px-16">
+        <GradientHeading class="mb-16 text-center text-4xl font-bold">Tokenomics</GradientHeading>
         <div
-          class="group mb-8 rounded-2xl border border-gray-100 bg-gradient-to-br from-white to-purple-50/30 p-4 shadow-lg transition-all hover:scale-[1.02] hover:shadow-xl sm:p-8">
-          <div class="mb-6 flex items-center gap-3">
-            <div
-              class="mb-8 inline-flex h-16 w-16 items-center justify-center rounded-2xl bg-gradient-to-br from-purple-100 to-blue-50">
-              <ChartPie class="h-7 w-7 text-purple-500" />
-            </div>
-            <h3 class="mb-8 text-2xl font-bold text-gray-900">Breakdown</h3>
-          </div>
-          <img src="/tokenomics-piechart.png" />
+          class="group mb-8 rounded-2xl p-4 transition-all hover:scale-[1.02] hover:shadow-xl sm:p-8">
+          <img src="/tokenomics-piechart.png" alt="Tokenomics chart" class="mx-auto" />
         </div>
         <div class="grid gap-4 sm:p-8 md:grid-cols-2">
           <!-- Locked supply 4.5% -->
           <div
-            class="group rounded-2xl border border-gray-100 bg-gradient-to-br from-white to-purple-50/30 p-4 shadow-lg transition-all hover:scale-[1.02] hover:shadow-xl sm:p-8">
-            <div class="mb-6 flex items-center gap-3">
-              <div
-                class="mb-8 inline-flex h-16 w-16 items-center justify-center rounded-2xl bg-gradient-to-br from-purple-100 to-blue-50">
-                <Lock class="h-7 w-7 text-purple-500" />
-              </div>
-              <h3 class="mb-8 text-2xl font-bold text-gray-900">Locked Supply</h3>
-            </div>
-            <p class="mb-6 text-base text-gray-600 sm:text-lg">
-              <strong class="text-purple-600">4.5%</strong>
-              of the total supply is locked using Jupiter Lock
-              <a
-                href={lockContractAddress}
-                target="_blank"
-                class="inline-flex items-center gap-2 font-medium text-purple-500 hover:text-purple-600">
-                View Lock Contract
-                <ExternalLink class="h-5 w-5" />
-              </a>
-            </p>
+            class="flex flex-col items-center justify-between rounded-3xl border border-white/10 p-10 lg:flex-row">
+            <div>
+              <GradientHeading class="mb-4 text-3xl sm:text-4xl">Locked Supply</GradientHeading>
 
-            <ul class="space-y-4">
-              <li class="flex items-center gap-3">
-                <div class="rounded-lg bg-purple-100/50 p-2">
-                  <ArrowRight class="h-5 w-5 text-purple-500" />
-                </div>
-                <span class="text-base text-gray-700 sm:text-lg">Locked until May 2026</span>
+              <GradientHeading class="mb-6 text-sm leading-relaxed sm:text-base">
+                4.5% of the total supply is locked using Jupiter Lock
+              </GradientHeading>
+            </div>
+
+            <ul>
+              <li class="flex items-start gap-3">
+                <GradientHeading>Locked until May 2026</GradientHeading>
               </li>
-              <li class="flex min-w-0 items-center gap-3">
-                <div class="flex-shrink-0 rounded-lg bg-purple-100/50 p-2">
-                  <ArrowRight class="h-5 w-5 text-purple-500" />
-                </div>
-                <span class="min-w-0 flex-1 overflow-hidden text-base text-gray-700 sm:text-lg">
-                  Redeemed on the pump.fun creator wallet:
+              <li class="flex flex-col gap-3 sm:flex-row sm:items-start">
+                <div class="min-w-0">
+                  <GradientHeading>Redeemed on the pump.fun creator wallet:</GradientHeading>
                   <a
                     href="https://solscan.io/account/{deployerWalletAddress}"
                     target="_blank"
-                    class="inline-flex items-center gap-2 font-medium text-purple-500 hover:text-purple-600">
-                    <pre
-                      class="max-w-[250px] truncate"
-                      title={deployerWalletAddress}>{deployerWalletAddress}</pre>
-                    <ExternalLink class="h-5 w-5" />
+                    class="inline-flex items-center gap-2 break-all text-white underline underline-offset-2 hover:opacity-80">
+                    {deployerWalletAddress}
+                    <ExternalLink class="h-4 w-4" />
                   </a>
-                </span>
+                </div>
               </li>
             </ul>
           </div>
 
           <!-- Treasury supply 4.875% -->
           <div
-            class="group rounded-2xl border border-gray-100 bg-gradient-to-br from-white to-purple-50/30 p-8 shadow-lg transition-all hover:scale-[1.02] hover:shadow-xl">
-            <div class="mb-6 flex items-center gap-3">
-              <div
-                class="mb-8 inline-flex h-16 w-16 items-center justify-center rounded-2xl bg-gradient-to-br from-purple-100 to-blue-50">
-                <Wallet class="h-7 w-7 text-purple-500" />
-              </div>
-              <h3 class="mb-8 text-2xl font-bold text-gray-900">Vested Treasury</h3>
-            </div>
-            <p class="mb-6 text-lg text-gray-600">
-              <strong class="text-purple-600">4.875%</strong>
-              of the total supply is vested over a 6 month period using Jupiter Lock
-              <a
-                href={vestedTreasuryContractAddress}
-                target="_blank"
-                class="inline-flex items-center gap-2 font-medium text-purple-500 hover:text-purple-600">
-                View Vesting Contract
-                <ExternalLink class="h-5 w-5" />
-              </a>
-            </p>
+            class="flex flex-col items-center justify-between rounded-3xl border border-white/10 p-10 lg:flex-row">
+            <div>
+              <GradientHeading class="mb-4 text-3xl sm:text-4xl">Vested Treasury</GradientHeading>
 
-            <ul class="space-y-4">
-              <li class="flex items-center gap-3">
-                <div class="rounded-lg bg-purple-100/50 p-2">
-                  <ArrowRight class="h-5 w-5 text-purple-500" />
-                </div>
-                <span class="text-lg text-gray-700">Vested until November 2025</span>
+              <GradientHeading class="mb-6 text-sm leading-relaxed sm:text-base">
+                4.875% of the total supply is vested over a 6 month period using Jupiter Lock
+              </GradientHeading>
+            </div>
+
+            <ul>
+              <li class="flex items-start gap-3">
+                <GradientHeading>Vested until November 2025</GradientHeading>
               </li>
-              <li class="flex items-center gap-3">
-                <div class="rounded-lg bg-purple-100/50 p-2">
-                  <ArrowRight class="h-5 w-5 text-purple-500" />
+              <li class="flex flex-col gap-3 sm:flex-row sm:items-start">
+                <div class="min-w-0">
+                  <GradientHeading>View Vesting Contract:</GradientHeading>
+                  <a
+                    href={vestedTreasuryContractAddress}
+                    target="_blank"
+                    class="inline-flex items-center gap-2 break-all text-white underline underline-offset-2 hover:opacity-80">
+                    View Vesting Contract
+                    <ExternalLink class="h-4 w-4" />
+                  </a>
                 </div>
-                <span class="text-lg text-gray-700">
-                  Redeemed on the pump.fun creator wallet:
+              </li>
+              <li class="flex flex-col gap-3 sm:flex-row sm:items-start">
+                <div class="min-w-0">
+                  <GradientHeading>Redeemed on the pump.fun creator wallet:</GradientHeading>
                   <a
                     href="https://solscan.io/account/{deployerWalletAddress}"
                     target="_blank"
-                    class="inline-flex items-center gap-2 font-medium text-purple-500 hover:text-purple-600">
-                    <pre
-                      class="max-w-[250px] truncate"
-                      title={deployerWalletAddress}>{deployerWalletAddress}</pre>
-                    <ExternalLink class="h-5 w-5" />
+                    class="inline-flex items-center gap-2 break-all text-white underline underline-offset-2 hover:opacity-80">
+                    {deployerWalletAddress}
+                    <ExternalLink class="h-4 w-4" />
                   </a>
-                </span>
+                </div>
               </li>
             </ul>
           </div>
 
           <!-- Marketing supply 5.875% -->
           <div
-            class="group rounded-2xl border border-gray-100 bg-gradient-to-br from-white to-purple-50/30 p-8 shadow-lg transition-all hover:scale-[1.02] hover:shadow-xl">
-            <div class="mb-6 flex items-center gap-3">
-              <div
-                class="mb-8 inline-flex h-16 w-16 items-center justify-center rounded-2xl bg-gradient-to-br from-purple-100 to-blue-50">
-                <PartyPopper class="h-7 w-7 text-purple-500" />
-              </div>
-              <h3 class="mb-8 text-2xl font-bold text-gray-900">Marketing</h3>
-            </div>
-            <p class="mb-6 text-lg text-gray-600">
-              <strong class="text-purple-600">5.875%</strong>
-              of the total supply is budgeted for marketing
-            </p>
+            class="flex flex-col items-center justify-between rounded-3xl border border-white/10 p-10 lg:flex-row">
+            <div>
+              <GradientHeading class="mb-4 text-3xl sm:text-4xl">Marketing</GradientHeading>
 
-            <ul class="space-y-4">
-              <li class="flex items-center gap-3">
-                <div class="rounded-lg bg-purple-100/50 p-2">
-                  <ArrowRight class="h-5 w-5 text-purple-500" />
-                </div>
-                <span class="text-lg text-gray-700">
-                  Wallet Address:
+              <GradientHeading class="mb-6 text-sm leading-relaxed sm:text-base">
+                5.875% of the total supply is budgeted for marketing
+              </GradientHeading>
+            </div>
+
+            <ul>
+              <li class="flex items-start gap-3">
+                <GradientHeading>
+                  Supply is available for use to fund ongoing marketing activities
+                </GradientHeading>
+              </li>
+              <li class="flex items-start gap-3">
+                <GradientHeading>Used to pay for marketing and listing activities</GradientHeading>
+              </li>
+              <li class="flex flex-col gap-3 sm:flex-row sm:items-start">
+                <div class="min-w-0">
+                  <GradientHeading>Wallet Address:</GradientHeading>
                   <a
                     href="https://solscan.io/account/{marketingWalletAddress}"
                     target="_blank"
-                    class="inline-flex items-center gap-2 font-medium text-purple-500 hover:text-purple-600">
-                    <pre
-                      class="max-w-[250px] truncate"
-                      title={marketingWalletAddress}>{marketingWalletAddress}</pre>
-                    <ExternalLink class="h-5 w-5" />
+                    class="inline-flex items-center gap-2 break-all text-white underline underline-offset-2 hover:opacity-80">
+                    {marketingWalletAddress}
+                    <ExternalLink class="h-4 w-4" />
                   </a>
-                </span>
-              </li>
-              <li class="flex items-center gap-3">
-                <div class="rounded-lg bg-purple-100/50 p-2">
-                  <ArrowRight class="h-5 w-5 text-purple-500" />
                 </div>
-                <span class="text-lg text-gray-700">
-                  Supply is available for use to fund ongoing marketing activities
-                </span>
-              </li>
-              <li class="flex items-center gap-3">
-                <div class="rounded-lg bg-purple-100/50 p-2">
-                  <ArrowRight class="h-5 w-5 text-purple-500" />
-                </div>
-                <span class="text-lg text-gray-700">
-                  Used to pay for marketing and listing activities
-                </span>
               </li>
             </ul>
           </div>
 
           <!-- R&D supply 7.25% -->
           <div
-            class="group rounded-2xl border border-gray-100 bg-gradient-to-br from-white to-purple-50/30 p-8 shadow-lg transition-all hover:scale-[1.02] hover:shadow-xl">
-            <div class="mb-6 flex items-center gap-3">
-              <div
-                class="mb-8 inline-flex h-16 w-16 items-center justify-center rounded-2xl bg-gradient-to-br from-purple-100 to-blue-50">
-                <Database class="h-7 w-7 text-purple-500" />
-              </div>
-              <h3 class="mb-8 text-2xl font-bold text-gray-900">Technology R&D</h3>
-            </div>
-            <p class="mb-6 text-lg text-gray-600">
-              <strong class="text-purple-600">7.25%</strong>
-              of the total supply is vested over a 6 months period using Jupiter Lock
-              <span>
-                <a
-                  href={rnDVestingContractAddress}
-                  target="_blank"
-                  class="inline-flex items-center gap-2 font-medium text-purple-500 hover:text-purple-600">
-                  View Vesting Contract
-                  <ExternalLink class="h-5 w-5" />
-                </a>
-              </span>
-            </p>
+            class="flex flex-col items-center justify-between rounded-3xl border border-white/10 p-10 lg:flex-row">
+            <div>
+              <GradientHeading class="mb-4 text-3xl sm:text-4xl">Technology R&D</GradientHeading>
 
-            <ul class="space-y-4">
-              <li class="flex items-center gap-3">
-                <div class="rounded-lg bg-purple-100/50 p-2">
-                  <ArrowRight class="h-5 w-5 text-purple-500" />
+              <GradientHeading class="mb-6 text-sm leading-relaxed sm:text-base">
+                7.25% of the total supply is vested over a 6 months period using Jupiter Lock
+              </GradientHeading>
+            </div>
+
+            <ul>
+              <li class="flex items-start gap-3">
+                <GradientHeading>Vested until November 2025</GradientHeading>
+              </li>
+              <li class="flex items-start gap-3">
+                <GradientHeading>
+                  Supply to be used to pay different members working on developing our technology
+                </GradientHeading>
+              </li>
+              <li class="flex flex-col gap-3 sm:flex-row sm:items-start">
+                <div class="min-w-0">
+                  <GradientHeading>View Vesting Contract:</GradientHeading>
+                  <a
+                    href={rnDVestingContractAddress}
+                    target="_blank"
+                    class="inline-flex items-center gap-2 break-all text-white underline underline-offset-2 hover:opacity-80">
+                    View Vesting Contract
+                    <ExternalLink class="h-4 w-4" />
+                  </a>
                 </div>
-                <span class="text-lg text-gray-700">
-                  Vested to R&D Wallet:
+              </li>
+              <li class="flex flex-col gap-3 sm:flex-row sm:items-start">
+                <div class="min-w-0">
+                  <GradientHeading>Vested to R&D Wallet:</GradientHeading>
                   <a
                     href="https://solscan.io/account/{rnDWalletAddress}"
                     target="_blank"
-                    class="inline-flex items-center gap-2 font-medium text-purple-500 hover:text-purple-600">
-                    <pre
-                      class="max-w-[250px] truncate"
-                      title={rnDWalletAddress}>{rnDWalletAddress}</pre>
-                    <ExternalLink class="h-5 w-5" />
+                    class="inline-flex items-center gap-2 break-all text-white underline underline-offset-2 hover:opacity-80">
+                    {rnDWalletAddress}
+                    <ExternalLink class="h-4 w-4" />
                   </a>
-                </span>
-              </li>
-              <li class="flex items-center gap-3">
-                <div class="rounded-lg bg-purple-100/50 p-2">
-                  <ArrowRight class="h-5 w-5 text-purple-500" />
                 </div>
-                <span class="text-lg text-gray-700">Vested until November 2025</span>
-              </li>
-              <li class="flex items-center gap-3">
-                <div class="rounded-lg bg-purple-100/50 p-2">
-                  <ArrowRight class="h-5 w-5 text-purple-500" />
-                </div>
-                <span class="text-lg text-gray-700">
-                  Supply to be used to pay different members working on developing our technology
-                </span>
               </li>
             </ul>
           </div>
 
           <!-- Community & Training supply 4.5% -->
           <div
-            class="group rounded-2xl border border-gray-100 bg-gradient-to-br from-white to-purple-50/30 p-8 shadow-lg transition-all hover:scale-[1.02] hover:shadow-xl">
-            <div class="mb-6 flex items-center gap-3">
-              <div
-                class="mb-8 inline-flex h-16 w-16 items-center justify-center rounded-2xl bg-gradient-to-br from-purple-100 to-blue-50">
-                <Gauge class="h-7 w-7 text-purple-500" />
-              </div>
-              <h3 class="mb-8 text-2xl font-bold text-gray-900">Community & Training</h3>
-            </div>
-            <p class="mb-6 text-lg text-gray-600">
-              <strong class="text-purple-600">4.5%</strong>
-              of the total supply is budgeted for community & training incentives
-            </p>
+            class="flex flex-col items-center justify-between rounded-3xl border border-white/10 p-10 lg:flex-row">
+            <div>
+              <GradientHeading class="mb-4 text-3xl sm:text-4xl">
+                Community & Training
+              </GradientHeading>
 
-            <ul class="space-y-4">
-              <li class="flex items-center gap-3">
-                <div class="rounded-lg bg-purple-100/50 p-2">
-                  <ArrowRight class="h-5 w-5 text-purple-500" />
-                </div>
-                <span class="text-lg text-gray-700">
-                  Wallet Address:
+              <GradientHeading class="mb-6 text-sm leading-relaxed sm:text-base">
+                4.5% of the total supply is budgeted for community & training incentives
+              </GradientHeading>
+            </div>
+
+            <ul>
+              <li class="flex items-start gap-3">
+                <GradientHeading>
+                  Supply is available for use to fund any community incentives and newly launched
+                  trainings
+                </GradientHeading>
+              </li>
+              <li class="flex items-start gap-3">
+                <GradientHeading>
+                  Used to pay for incentivizing community initiatives
+                </GradientHeading>
+              </li>
+              <li class="flex items-start gap-3">
+                <GradientHeading>
+                  Used to escrow training funds till disbursed to trainers
+                </GradientHeading>
+              </li>
+              <li class="flex flex-col gap-3 sm:flex-row sm:items-start">
+                <div class="min-w-0">
+                  <GradientHeading>Wallet Address:</GradientHeading>
                   <a
                     href="https://solscan.io/account/{trainingWalletAddress}"
                     target="_blank"
-                    class="inline-flex items-center gap-2 font-medium text-purple-500 hover:text-purple-600">
-                    <pre
-                      class="max-w-[250px] truncate"
-                      title={trainingWalletAddress}>{trainingWalletAddress}</pre>
-                    <ExternalLink class="h-5 w-5" />
+                    class="inline-flex items-center gap-2 break-all text-white underline underline-offset-2 hover:opacity-80">
+                    {trainingWalletAddress}
+                    <ExternalLink class="h-4 w-4" />
                   </a>
-                </span>
-              </li>
-              <li class="flex items-center gap-3">
-                <div class="rounded-lg bg-purple-100/50 p-2">
-                  <ArrowRight class="h-5 w-5 text-purple-500" />
                 </div>
-                <span class="text-lg text-gray-700">
-                  Supply is available for use to fund any community incentives and newly launched
-                  trainings
-                </span>
-              </li>
-              <li class="flex items-center gap-3">
-                <div class="rounded-lg bg-purple-100/50 p-2">
-                  <ArrowRight class="h-5 w-5 text-purple-500" />
-                </div>
-                <span class="text-lg text-gray-700">
-                  Used to pay for incentivizing community initiatives
-                </span>
-              </li>
-              <li class="flex items-center gap-3">
-                <div class="rounded-lg bg-purple-100/50 p-2">
-                  <ArrowRight class="h-5 w-5 text-purple-500" />
-                </div>
-                <span class="text-lg text-gray-700">
-                  Used to escrow training funds till disbursed to trainers
-                </span>
               </li>
             </ul>
           </div>
 
           <!-- KOLS & Partners 8% -->
           <div
-            class="group rounded-2xl border border-gray-100 bg-gradient-to-br from-white to-purple-50/30 p-8 shadow-lg transition-all hover:scale-[1.02] hover:shadow-xl">
-            <div class="mb-6 flex items-center gap-3">
-              <div
-                class="mb-8 inline-flex h-16 w-16 items-center justify-center rounded-2xl bg-gradient-to-br from-purple-100 to-blue-50">
-                <Handshake class="h-7 w-7 text-purple-500" />
-              </div>
-              <h3 class="mb-8 text-2xl font-bold text-gray-900">KOLs & Partners</h3>
-            </div>
-            <p class="mb-6 text-lg text-gray-600">
-              <strong class="text-purple-600">8%</strong>
-              of the total supply is budgeted for paying KOLs & facilitating different partnerships
-            </p>
+            class="flex flex-col items-center justify-between rounded-3xl border border-white/10 p-10 lg:flex-row">
+            <div>
+              <GradientHeading class="mb-4 text-3xl sm:text-4xl">KOLs & Partners</GradientHeading>
 
-            <ul class="space-y-4">
-              <li class="flex items-center gap-3">
-                <div class="rounded-lg bg-purple-100/50 p-2">
-                  <ArrowRight class="h-5 w-5 text-purple-500" />
-                </div>
-                <span class="text-lg text-gray-700">
-                  Wallet Address:
+              <GradientHeading class="mb-6 text-sm leading-relaxed sm:text-base">
+                8% of the total supply is budgeted for paying KOLs & facilitating different
+                partnerships
+              </GradientHeading>
+            </div>
+
+            <ul>
+              <li class="flex items-start gap-3">
+                <GradientHeading>Supply is available for use</GradientHeading>
+              </li>
+              <li class="flex items-start gap-3">
+                <GradientHeading>Paid initatives from this pool will be vested</GradientHeading>
+              </li>
+              <li class="flex items-start gap-3">
+                <GradientHeading>Used to incentivize a vibrant partner ecosystem</GradientHeading>
+              </li>
+              <li class="flex flex-col gap-3 sm:flex-row sm:items-start">
+                <div class="min-w-0">
+                  <GradientHeading>Wallet Address:</GradientHeading>
                   <a
                     href="https://solscan.io/account/{kolsnPartnersWalletAddress}"
                     target="_blank"
-                    class="inline-flex items-center gap-2 font-medium text-purple-500 hover:text-purple-600">
-                    <pre
-                      class="max-w-[250px] truncate"
-                      title={kolsnPartnersWalletAddress}>{kolsnPartnersWalletAddress}</pre>
-                    <ExternalLink class="h-5 w-5" />
+                    class="inline-flex items-center gap-2 break-all text-white underline underline-offset-2 hover:opacity-80">
+                    {kolsnPartnersWalletAddress}
+                    <ExternalLink class="h-4 w-4" />
                   </a>
-                </span>
-              </li>
-              <li class="flex items-center gap-3">
-                <div class="rounded-lg bg-purple-100/50 p-2">
-                  <ArrowRight class="h-5 w-5 text-purple-500" />
                 </div>
-                <span class="text-lg text-gray-700">Supply is available for use</span>
-              </li>
-              <li class="flex items-center gap-3">
-                <div class="rounded-lg bg-purple-100/50 p-2">
-                  <ArrowRight class="h-5 w-5 text-purple-500" />
-                </div>
-                <span class="text-lg text-gray-700">
-                  Paid initatives from this pool will be vested
-                </span>
-              </li>
-              <li class="flex items-center gap-3">
-                <div class="rounded-lg bg-purple-100/50 p-2">
-                  <ArrowRight class="h-5 w-5 text-purple-500" />
-                </div>
-                <span class="text-lg text-gray-700">
-                  Used to incentivize a vibrant partner ecosystem
-                </span>
               </li>
             </ul>
           </div>
 
           <!-- $VIRAL Holders Airdrop 20% -->
           <div
-            class="group rounded-2xl border border-gray-100 bg-gradient-to-br from-white to-purple-50/30 p-8 shadow-lg transition-all hover:scale-[1.02] hover:shadow-xl">
-            <div class="mb-6 flex items-center gap-3">
-              <div
-                class="mb-8 inline-flex h-16 w-16 items-center justify-center rounded-2xl bg-gradient-to-br from-purple-100 to-blue-50">
-                <HandHeart class="h-7 w-7 text-purple-500" />
-              </div>
-              <h3 class="mb-8 text-2xl font-bold text-gray-900">$VIRAL Holders Airdrop</h3>
-            </div>
-            <p class="mb-6 text-lg text-gray-600">
-              <strong class="text-purple-600">20%</strong>
-              were bundled on launch to airdrop to previous $VIRAL holders
-              <a
-                href="https://github.com/omniminds-ai/viralmind-airdrop"
-                target="_blank"
-                class="inline-flex items-center gap-2 font-medium text-purple-500 hover:text-purple-600">
-                View Details
-                <ExternalLink class="h-5 w-5" />
-              </a>
-            </p>
+            class="flex flex-col items-center justify-between rounded-3xl border border-white/10 p-10 lg:flex-row">
+            <div>
+              <GradientHeading class="mb-4 text-3xl sm:text-4xl">
+                $VIRAL Holders Airdrop
+              </GradientHeading>
 
-            <ul class="space-y-4">
-              <li class="flex items-center gap-3">
-                <div class="rounded-lg bg-green-100/80 p-2">
-                  <Check class="h-5 w-5 text-green-500" />
+              <GradientHeading class="mb-6 text-sm leading-relaxed sm:text-base">
+                20% were bundled on launch to airdrop to previous $VIRAL holders
+              </GradientHeading>
+            </div>
+
+            <ul>
+              <li class="flex items-start gap-3">
+                <GradientHeading>Airdrop completed right after launch</GradientHeading>
+              </li>
+              <li class="flex flex-col gap-3 sm:flex-row sm:items-start">
+                <div class="min-w-0">
+                  <GradientHeading>View Details:</GradientHeading>
+                  <a
+                    href="https://github.com/omniminds-ai/viralmind-airdrop"
+                    target="_blank"
+                    class="inline-flex items-center gap-2 break-all text-white underline underline-offset-2 hover:opacity-80">
+                    View Details
+                    <ExternalLink class="h-4 w-4" />
+                  </a>
                 </div>
-                <span class="text-lg text-gray-700">Airdrop completed right after launch</span>
               </li>
             </ul>
           </div>
 
           <!-- Open Market 55% -->
           <div
-            class="group rounded-2xl border border-gray-100 bg-gradient-to-br from-white to-purple-50/30 p-8 shadow-lg transition-all hover:scale-[1.02] hover:shadow-xl">
-            <div class="mb-6 flex items-center gap-3">
-              <div
-                class="mb-8 inline-flex h-16 w-16 items-center justify-center rounded-2xl bg-gradient-to-br from-purple-100 to-blue-50">
-                <Coins class="h-7 w-7 text-purple-500" />
-              </div>
-              <h3 class="mb-8 text-2xl font-bold text-gray-900">Open Market</h3>
+            class="flex flex-col items-center justify-between rounded-3xl border border-white/10 p-10 lg:flex-row">
+            <div>
+              <GradientHeading class="mb-4 text-3xl sm:text-4xl">Open Market</GradientHeading>
+
+              <GradientHeading class="mb-6 text-sm leading-relaxed sm:text-base">
+                65% are available on the open market post-airdrop (45% at launch + 20% after
+                airdrop.
+              </GradientHeading>
             </div>
-            <p class="mb-6 text-lg text-gray-600">
-              <strong class="text-purple-600">65%</strong>
-              are available on the open market post-airdrop (45% at launch + 20% after airdrop.
-            </p>
-            <p class="mb-6 text-lg text-gray-600">
-              <a
-                href={TOKEN_DATA.dexscreenerUrl}
-                target="_blank"
-                class="inline-flex items-center gap-2 font-medium text-purple-500 hover:text-purple-600">
-                Trade $OMNIS
-                <ExternalLink class="h-5 w-5" />
-              </a>
-            </p>
+
+            <ul>
+              <li class="flex flex-col gap-3 sm:flex-row sm:items-start">
+                <div class="min-w-0">
+                  <GradientHeading>Trade $OMNIS:</GradientHeading>
+                  <a
+                    href={TOKEN_DATA.dexscreenerUrl}
+                    target="_blank"
+                    class="inline-flex items-center gap-2 break-all text-white underline underline-offset-2 hover:opacity-80">
+                    Trade $OMNIS
+                    <ExternalLink class="h-4 w-4" />
+                  </a>
+                </div>
+              </li>
+            </ul>
           </div>
         </div>
       </div>
     </section>
   </div>
 </main>
+
+<style>
+.glass-effect {
+  box-shadow: 
+    inset 0px 32px 64px rgba(92, 58, 228, 0.08),
+    inset 1px 1px 1px rgba(92, 58, 228, 0.5),
+    inset 0px 0px 1px rgba(255, 255, 255, 0.4);
+}
+</style>

@@ -1,6 +1,6 @@
 <script lang="ts">
-  import { BarChart3, ArrowUpDown } from 'lucide-svelte';
   import { onMount } from 'svelte';
+  import GradientHeading from './GradientHeading.svelte';
 
   const TOKEN_DATA = {
     contractAddress: 'G6iRK8kN67HJFrPA1CDA5KZaPJMiBu3bqdd9vdKBpump',
@@ -37,36 +37,30 @@
 <!-- Token Metrics Grid -->
 <div class="grid gap-8 md:grid-cols-2">
   <!-- SOL Price -->
-  <div class="flex flex-col justify-between rounded-2xl border border-gray-100 bg-gradient-to-br from-white to-purple-50/30 p-8 shadow-lg transition-transform hover:scale-[1.02]">
+  <div class="flex flex-col justify-between rounded-2xl rounded-l-none border-l-4 border-l-secondary-100 ps-6 p-8 transition-transform hover:scale-[1.02] bg-gradient-to-r from-[#D9D9D900] to-[#B7A6FB33]">
     <div class="mb-6 flex items-center gap-3">
-      <div class="rounded-xl bg-purple-100/50 p-3">
-        <ArrowUpDown class="h-7 w-7 text-purple-500" />
-      </div>
-      <h3 class="text-xl font-bold text-gray-900"><a href="{TOKEN_DATA.dexscreenerUrl}"><pre>$OMNIS</pre></a> per SOL</h3>
+      <GradientHeading class="text-3xl"><a href="{TOKEN_DATA.dexscreenerUrl}"><pre>$OMNIS</pre></a> per SOL</GradientHeading>
     </div>
     <div>
-      <div class="mb-2 text-4xl font-bold text-gray-900">
+      <GradientHeading class="mb-2 text-4xl font-bol">
         {omniPerSol.toLocaleString(undefined, { maximumFractionDigits: 0 })}
-      </div>
-      <div class="text-base text-gray-600">
+      </GradientHeading>
+      <GradientHeading class="text-base text-gray-600">
         1 SOL = ${solPrice.toFixed(2)}
-      </div>
+      </GradientHeading>
     </div>
   </div>
 
   <!-- Market Cap -->
-  <div class="flex flex-col justify-between rounded-2xl border border-gray-100 bg-gradient-to-br from-white to-purple-50/30 p-8 shadow-lg transition-transform hover:scale-[1.02]">
+  <div class="flex flex-col justify-between rounded-2xl rounded-l-none border-l-4 border-l-secondary-100 ps-6 p-8 transition-transform hover:scale-[1.02] bg-gradient-to-r from-[#D9D9D900] to-[#B7A6FB33]">
     <div class="mb-6 flex items-center gap-3">
-      <div class="rounded-xl bg-purple-100/50 p-3">
-        <BarChart3 class="h-7 w-7 text-purple-500" />
-      </div>
-      <h3 class="text-xl font-bold text-gray-900">Market Cap</h3>
+      <GradientHeading class="text-3xl">Market Cap</GradientHeading>
     </div>
     <div>
-      <div class="mb-2 text-4xl font-bold text-gray-900">
+      <GradientHeading class="mb-2 text-4xl">
         ${(omniPrice * 1_000_000_000).toLocaleString(undefined, { maximumFractionDigits: 0 })}
-      </div>
-      <div class="text-base text-gray-600">Fully Diluted</div>
+      </GradientHeading>
+      <GradientHeading class="text-lg">Fully Diluted</GradientHeading>
     </div>
   </div>
 </div>

@@ -1,9 +1,10 @@
 <script lang="ts">
     import exampleUsage from '$lib/assets/exampleusage.mp4';
     import GradientHeading from './GradientHeading.svelte';
+    import BgEffect from '$lib/assets/bg-effect.svg'
 </script>
 
-<section class="relative min-h-screen overflow-hidden">
+<section class="relative min-h-screen overflow-hidden !bg-no-repeat !bg-cover" style={`background: url(${BgEffect})`}>
   <!-- Main Content Container -->
   <div class="relative z-20 flex flex-col items-center min-h-screen px-6 py-20">
     <!-- Header Content -->

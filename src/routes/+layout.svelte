@@ -55,7 +55,7 @@
     <Navbar />
   {/if}
   <div>
-<div class="absolute top-[-55%] left-1/2 -translate-x-1/2 w-[964px] h-[1022px] rounded-full bg-secondary-100 blur-[300px] opacity-40"></div>
+<div class="absolute top-[-55%] left-1/2 -translate-x-1/2 w-[964px] h-[1022px] rounded-full bg-secondary-100 blur-[300px] opacity-80"></div>
 {@render children()}
 </div>
   {#if !isTournamentRoute}
