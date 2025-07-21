@@ -1,7 +1,7 @@
 <!-- Navbar.svelte -->
 <script lang="ts">
   import logo from '$lib/assets/logo.png';
-  import logoTitle from '$lib/assets/Logo_Standard_dark.png';
+  import logoTitle from '$lib/assets/Logo_Standard_light.svg';
 
   import {
     Download,
@@ -43,9 +43,9 @@
   }
 </script>
 
-<div class="fixed left-0 right-0 top-0 z-50 text-white transition-all duration-300">
+<div class="fixed left-0 right-0 top-0 z-50 text-white transition-all duration-300 py-2">
   <div
-    class="absolute inset-0 border-b border-gray-200 backdrop-blur-lg transition-opacity duration-300"
+    class="absolute inset-0 backdrop-blur-lg transition-opacity duration-300"
     class:opacity-0={!isScrolled}
     class:opacity-100={isScrolled}>
   </div>
@@ -56,10 +56,10 @@
       <div class="flex items-center space-x-8">
         <a href="/" class="group flex items-center">
           <img
-            src={logo}
+            src={logoTitle}
             alt="OmniMinds"
-            class="hidden w-8 transition-transform group-hover:scale-105 lg:block" />
-          <img src={logoTitle} alt="OmniMinds" class="block h-14 transition-transform lg:hidden" />
+            class="hidden w-[140px] transition-transform group-hover:scale-105 lg:block" />
+          <img src={logo} alt="OmniMinds" class="block h-10 transition-transform lg:hidden" />
         </a>
       </div>
 

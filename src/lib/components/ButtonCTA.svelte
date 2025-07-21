@@ -18,7 +18,7 @@
 <a
   {href}
   {target}
-  class="group flex items-center gap-2 rounded-full {styles[
+  class="group flex items-center gap-2 rounded-full cursor-pointer {styles[
     variant
   ]} px-8 py-3 font-semibold shadow-lg transition-all hover:scale-105 {className}"
 >

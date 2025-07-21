@@ -17,6 +17,7 @@
   import ButtonCta from '$lib/components/ButtonCTA.svelte';
   import OmnisMetrics from '$lib/components/OmniMetrics.svelte';
   import GradientHeading from '$lib/components/GradientHeading.svelte';
+  import Button from '$lib/components/Button.svelte';
 
   const lockContractAddress =
     'https://lock.jup.ag/token/G6iRK8kN67HJFrPA1CDA5KZaPJMiBu3bqdd9vdKBpump';
@@ -101,7 +102,7 @@
         <div class="grid gap-10 md:grid-cols-3">
           <!-- How to Earn -->
           <div class="glass-effect mx-auto rounded-2xl border border-gray-900 p-8">
-            <GradientHeading class="mb-6 text-xl font-bold text-gray-900">
+            <GradientHeading class="mb-6 text-xl text-gray-900">
               How do I earn $OMNIS?
             </GradientHeading>
             <GradientHeading class="mb-6 text-gray-600">
@@ -112,7 +113,7 @@
 
           <!-- How to Spend -->
           <div class="glass-effect mx-auto rounded-2xl border border-gray-900 p-8">
-            <GradientHeading class="mb-6 text-xl font-bold text-gray-900">
+            <GradientHeading class="mb-6 text-xl text-gray-900">
               How do I spend $OMNIS?
             </GradientHeading>
             <GradientHeading class="mb-6 text-gray-600">
@@ -123,19 +124,19 @@
 
           <!-- How to Trade -->
           <div class="glass-effect mx-auto rounded-2xl border border-gray-900 p-8">
-            <GradientHeading class="mb-6 text-xl font-bold text-gray-900">
+            <GradientHeading class="mb-6 text-xl text-gray-900">
               Where do I trade $OMNIS?
             </GradientHeading>
             <GradientHeading class="mb-2 text-gray-600">
               Buy or sell $OMNIS with $USDC or $SOL through secure exchanges:
             </GradientHeading>
-            <a
-              href={TOKEN_DATA.dexscreenerUrl}
-              target="_blank"
-              class="inline-flex items-center gap-2 text-purple-500 hover:text-purple-600">
-              View Markets
-              <ExternalLink class="h-4 w-4" />
-            </a>
+            <Button
+              class="border-none ps-0">
+              <a href={TOKEN_DATA.dexscreenerUrl}
+              target="_blank">
+                View Market
+              </a>
+            </Button>
           </div>
         </div>
       </div>
@@ -150,7 +151,7 @@
     <!-- Tokenomics Section -->
     <section class="py-24">
       <div class="mx-auto px-4 sm:px-8 lg:px-16">
-        <GradientHeading class="mb-16 text-center text-4xl font-bold">Tokenomics</GradientHeading>
+        <GradientHeading class="mb-16 text-center text-5xl">Tokenomics</GradientHeading>
         <div
           class="group mb-8 rounded-2xl p-4 transition-all hover:scale-[1.02] hover:shadow-xl sm:p-8">
           <img src="/tokenomics-piechart.png" alt="Tokenomics chart" class="mx-auto" />
@@ -158,8 +159,8 @@
         <div class="grid gap-4 sm:p-8 md:grid-cols-2">
           <!-- Locked supply 4.5% -->
           <div
-            class="flex flex-col items-center justify-between rounded-3xl border border-white/10 p-10 lg:flex-row">
-            <div>
+            class="flex flex-col items-center justify-between rounded-3xl border border-white/10 p-10 lg:flex-row gap-2">
+            <div class="flex-1">
               <GradientHeading class="mb-4 text-3xl sm:text-4xl">Locked Supply</GradientHeading>
 
               <GradientHeading class="mb-6 text-sm leading-relaxed sm:text-base">
@@ -167,7 +168,7 @@
               </GradientHeading>
             </div>
 
-            <ul>
+            <ul class="flex-1">
               <li class="flex items-start gap-3">
                 <GradientHeading>Locked until May 2026</GradientHeading>
               </li>
@@ -188,8 +189,8 @@
 
           <!-- Treasury supply 4.875% -->
           <div
-            class="flex flex-col items-center justify-between rounded-3xl border border-white/10 p-10 lg:flex-row">
-            <div>
+            class="flex flex-col items-center justify-between rounded-3xl border border-white/10 p-10 lg:flex-row gap-2">
+            <div class="flex-1">
               <GradientHeading class="mb-4 text-3xl sm:text-4xl">Vested Treasury</GradientHeading>
 
               <GradientHeading class="mb-6 text-sm leading-relaxed sm:text-base">
@@ -197,7 +198,7 @@
               </GradientHeading>
             </div>
 
-            <ul>
+            <ul class="flex-1">
               <li class="flex items-start gap-3">
                 <GradientHeading>Vested until November 2025</GradientHeading>
               </li>
@@ -230,8 +231,8 @@
 
           <!-- Marketing supply 5.875% -->
           <div
-            class="flex flex-col items-center justify-between rounded-3xl border border-white/10 p-10 lg:flex-row">
-            <div>
+            class="flex flex-col items-center justify-between rounded-3xl border border-white/10 p-10 lg:flex-row gap-2">
+            <div class="flex-1">
               <GradientHeading class="mb-4 text-3xl sm:text-4xl">Marketing</GradientHeading>
 
               <GradientHeading class="mb-6 text-sm leading-relaxed sm:text-base">
@@ -239,7 +240,7 @@
               </GradientHeading>
             </div>
 
-            <ul>
+            <ul class="flex-1">
               <li class="flex items-start gap-3">
                 <GradientHeading>
                   Supply is available for use to fund ongoing marketing activities
@@ -265,8 +266,8 @@
 
           <!-- R&D supply 7.25% -->
           <div
-            class="flex flex-col items-center justify-between rounded-3xl border border-white/10 p-10 lg:flex-row">
-            <div>
+            class="flex flex-col items-center justify-between rounded-3xl border border-white/10 p-10 lg:flex-row gap-2">
+            <div class="flex-1">
               <GradientHeading class="mb-4 text-3xl sm:text-4xl">Technology R&D</GradientHeading>
 
               <GradientHeading class="mb-6 text-sm leading-relaxed sm:text-base">
@@ -274,7 +275,7 @@
               </GradientHeading>
             </div>
 
-            <ul>
+            <ul class="flex-1">
               <li class="flex items-start gap-3">
                 <GradientHeading>Vested until November 2025</GradientHeading>
               </li>
@@ -312,8 +313,8 @@
 
           <!-- Community & Training supply 4.5% -->
           <div
-            class="flex flex-col items-center justify-between rounded-3xl border border-white/10 p-10 lg:flex-row">
-            <div>
+            class="flex flex-col items-center justify-between rounded-3xl border border-white/10 p-10 lg:flex-row gap-2">
+            <div class="flex-1">
               <GradientHeading class="mb-4 text-3xl sm:text-4xl">
                 Community & Training
               </GradientHeading>
@@ -323,7 +324,7 @@
               </GradientHeading>
             </div>
 
-            <ul>
+            <ul class="flex-1">
               <li class="flex items-start gap-3">
                 <GradientHeading>
                   Supply is available for use to fund any community incentives and newly launched
@@ -357,8 +358,8 @@
 
           <!-- KOLS & Partners 8% -->
           <div
-            class="flex flex-col items-center justify-between rounded-3xl border border-white/10 p-10 lg:flex-row">
-            <div>
+            class="flex flex-col items-center justify-between rounded-3xl border border-white/10 p-10 lg:flex-row gap-2">
+            <div class="flex-1">
               <GradientHeading class="mb-4 text-3xl sm:text-4xl">KOLs & Partners</GradientHeading>
 
               <GradientHeading class="mb-6 text-sm leading-relaxed sm:text-base">
@@ -367,7 +368,7 @@
               </GradientHeading>
             </div>
 
-            <ul>
+            <ul class="flex-1">
               <li class="flex items-start gap-3">
                 <GradientHeading>Supply is available for use</GradientHeading>
               </li>
@@ -394,8 +395,8 @@
 
           <!-- $VIRAL Holders Airdrop 20% -->
           <div
-            class="flex flex-col items-center justify-between rounded-3xl border border-white/10 p-10 lg:flex-row">
-            <div>
+            class="flex flex-col items-center justify-between rounded-3xl border border-white/10 p-10 lg:flex-row gap-2">
+            <div class="flex-1">
               <GradientHeading class="mb-4 text-3xl sm:text-4xl">
                 $VIRAL Holders Airdrop
               </GradientHeading>
@@ -405,7 +406,7 @@
               </GradientHeading>
             </div>
 
-            <ul>
+            <ul class="flex-1">
               <li class="flex items-start gap-3">
                 <GradientHeading>Airdrop completed right after launch</GradientHeading>
               </li>
@@ -426,8 +427,8 @@
 
           <!-- Open Market 55% -->
           <div
-            class="flex flex-col items-center justify-between rounded-3xl border border-white/10 p-10 lg:flex-row">
-            <div>
+            class="flex flex-col items-center justify-between rounded-3xl border border-white/10 p-10 lg:flex-row gap-2">
+            <div class="flex-1">
               <GradientHeading class="mb-4 text-3xl sm:text-4xl">Open Market</GradientHeading>
 
               <GradientHeading class="mb-6 text-sm leading-relaxed sm:text-base">
@@ -436,8 +437,8 @@
               </GradientHeading>
             </div>
 
-            <ul>
-              <li class="flex flex-col gap-3 sm:flex-row sm:items-start">
+            <ul class="flex-1">
+              <li class="flex flex-col gap-3 sm:flex-row sm:items-start lg:items-center">
                 <div class="min-w-0">
                   <GradientHeading>Trade $OMNIS:</GradientHeading>
                   <a

@@ -1,6 +1,6 @@
 <script lang="ts">
   import type { HTMLButtonAttributes } from 'svelte/elements';
-
+  import { ChevronRight } from 'lucide-svelte';
   interface Props extends HTMLButtonAttributes {
     children: () => any;
     class?: string | undefined;
@@ -12,7 +12,8 @@
   {type}
   {disabled}
   {onclick}
-  class={`group inline-flex items-center justify-center gap-2 rounded-lg bg-purple-600 px-6 py-3 font-medium text-white transition-all hover:bg-purple-500 disabled:cursor-not-allowed disabled:opacity-50  hover:disabled:bg-purple-600 ${className}`}
+  class={`inline-flex rounded-full border border-secondary-300 px-4 py-3 text-accent-200 hover:scale-105 ${className}`}
 >
   {@render children()}
+  <ChevronRight class="text-secondary-300 ms-3"/>
 </button>

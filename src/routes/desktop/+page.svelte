@@ -28,6 +28,7 @@
     HammerIcon
   } from 'lucide-svelte';
   import ButtonCTA from '$lib/components/ButtonCTA.svelte';
+  import Button from '$lib/components/Button.svelte';
   import VideoPopup from '$lib/components/VideoPopup.svelte';
   import GradientHeading from '$lib/components/GradientHeading.svelte';
 
@@ -68,12 +69,13 @@
           <ButtonCTA href="/download" class="inline-flex items-center gap-2">
             Download Now
           </ButtonCTA>
-          <a
-            href="https://github.com/omniminds-ai/desktop"
-            target="_blank"
-            class="group inline-flex items-center gap-2 px-6 py-3">
-            <GradientHeading class="animated-underline mb-0">View Source</GradientHeading>
-          </a>
+          <ButtonCTA>
+            <a
+              href="https://github.com/omniminds-ai/desktop"
+              target="_blank">
+              <GradientHeading class="animated-underline mb-0">View Source</GradientHeading>
+            </a>
+          </ButtonCTA>
         </div>
       </div>
 
@@ -118,13 +120,12 @@
             </li>
           </ul>
           <div class="flex gap-4">
-            <button
-              on:click={() => {
+            <Button
+              onclick={() => {
                 showDemoVideo = true;
-              }}
-              class="inline-flex items-center gap-2 rounded-full bg-purple-600 px-6 py-3 text-accent-200 shadow transition-colors hover:bg-purple-700">
+              }}>
               Watch Demo
-            </button>
+            </Button>
             <a
               href="/download"
               class="inline-flex items-center gap-2 rounded-full border border-purple-600 bg-white px-6 py-3 text-purple-600 shadow transition-colors hover:bg-purple-50">
@@ -209,11 +210,12 @@
               </GradientHeading>
             </li>
           </ul>
-          <button
-            on:click={() => (showDemoVideo = true)}
-            class="inline-flex items-center gap-2 rounded-full bg-blue-600 px-6 py-3 text-accent-200 shadow transition-colors hover:bg-blue-700">
-            Watch Demo
-          </button>
+          <Button
+              onclick={() => {
+                showDemoVideo = true;
+              }}>
+              Watch Demo
+            </Button>
           <VideoPopup
             videoSrc="https://drive.google.com/file/d/1w02RoN1MAQ0-WLEXFDRNNiJLGMaYoDNb/preview"
             bind:isOpen={showDemoVideo} />
@@ -455,11 +457,11 @@
         Get instant $OMNIS payments when you upload demonstrations.
       </GradientHeading>
       <div class="flex gap-4">
-        <button class="rounded-full bg-secondary-100 px-8 py-3 text-white transition-colors">
+        <ButtonCTA class="rounded-full bg-secondary-100 px-8 py-3 text-white transition-colors">
           Signup for free
-        </button>
+        </ButtonCTA>
 
-        <button class="text-secondary-300">Book demo</button>
+        <Button class="border-none">Book demo</Button>
       </div>
     </div>
   </section>

@@ -2,6 +2,11 @@
     import exampleUsage from '$lib/assets/exampleusage.mp4';
     import GradientHeading from './GradientHeading.svelte';
     import BgEffect from '$lib/assets/bg-effect.svg'
+      import partner_1 from "$lib/assets/partner_1.png"
+  import partner_2 from "$lib/assets/partner_2.png"
+  import partner_3 from "$lib/assets/partner_3.png"
+  import partner_4 from "$lib/assets/partner_4.png"
+  import partner_5 from "$lib/assets/partner_5.png"
 </script>
 
 <section class="relative min-h-screen overflow-hidden !bg-no-repeat !bg-cover" style={`background: url(${BgEffect})`}>
@@ -81,29 +86,19 @@
       <div class="grid grid-cols-2 md:grid-cols-5 gap-8 items-center justify-items-center">
         <!-- Placeholder partner logos -->
         <div class="flex items-center justify-center h-12 opacity-60 hover:opacity-100 transition-opacity duration-300">
-          <div class="text-gray-400 text-sm font-medium px-4 py-2 border border-gray-600 rounded-lg bg-gray-800/50 backdrop-blur-sm">
-            PhotoSheller
-          </div>
+          <img src="{partner_1}" alt="">
         </div>
         <div class="flex items-center justify-center h-12 opacity-60 hover:opacity-100 transition-opacity duration-300">
-          <div class="text-gray-400 text-sm font-medium px-4 py-2 border border-gray-600 rounded-lg bg-gray-800/50 backdrop-blur-sm">
-            copy.ai
-          </div>
+          <img src="{partner_2}" alt="">
         </div>
         <div class="flex items-center justify-center h-12 opacity-60 hover:opacity-100 transition-opacity duration-300">
-          <div class="text-gray-400 text-sm font-medium px-4 py-2 border border-gray-600 rounded-lg bg-gray-800/50 backdrop-blur-sm">
-            Flatfile
-          </div>
+          <img src="{partner_3}" alt="">
         </div>
         <div class="flex items-center justify-center h-12 opacity-60 hover:opacity-100 transition-opacity duration-300">
-          <div class="text-gray-400 text-sm font-medium px-4 py-2 border border-gray-600 rounded-lg bg-gray-800/50 backdrop-blur-sm">
-            AI21labs
-          </div>
+          <img src="{partner_4}" alt="">
         </div>
         <div class="flex items-center justify-center h-12 opacity-60 hover:opacity-100 transition-opacity duration-300">
-          <div class="text-gray-400 text-sm font-medium px-4 py-2 border border-gray-600 rounded-lg bg-gray-800/50 backdrop-blur-sm">
-            SALESHOOD
-          </div>
+            <img src="{partner_5}" alt="">
         </div>
       </div>
     </div>
