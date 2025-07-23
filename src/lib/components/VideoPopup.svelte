@@ -1,8 +1,8 @@
 <script lang="ts">
   import { X } from 'lucide-svelte';
   import { fade } from 'svelte/transition';
-  
-  export let videoId: string;
+
+  export let videoSrc: string;
   export let isOpen = false;
 
   function closePopup() {
@@ -31,8 +31,8 @@
         <iframe
           width="100%"
           height="100%"
-          src="https://www.youtube.com/embed/{videoId}?autoplay=1"
-          title="YouTube video player"
+          src="{videoSrc}"
+          title="Video player"
           frameborder="0"
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
           allowfullscreen

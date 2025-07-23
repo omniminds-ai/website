@@ -112,6 +112,7 @@ function addAdapterEventListeners(adapter: Adapter) {
   wallets.forEach(({ adapter }) => {
     adapter.on('readyStateChange', onReadyStateChange, adapter);
   });
+  console.log("adapter: add event listners", {adapter});
   adapter.on('connect', onConnect);
   adapter.on('disconnect', onDisconnect);
   adapter.on('error', onError);
@@ -341,6 +342,7 @@ function onConnect() {
   const { adapter } = get(walletStore);
   if (!adapter) return;
 
+  console.log({adapter})
   walletStore.updateStatus({
     publicKey: adapter.publicKey,
     connected: adapter.connected
