@@ -16,7 +16,8 @@
     Dumbbell,
     Earth,
     Monitor,
-    ChevronUp
+    ChevronUp,
+    BookOpen
   } from 'lucide-svelte';
   import { onMount } from 'svelte';
   import WalletMultiButton from '$lib/components/solana/WalletMultiButton.svelte';
@@ -201,6 +202,17 @@
               </div>
             {/if}
           </div>
+          <!-- Blog-->
+          <div class="relative">
+            <a
+              href="https://medium.com/@omnimindsai"
+              target="_blank"
+              class="flex items-center gap-3 px-2 py-2 text-gray-600 transition-colors hover:text-gray-900">
+              <BookOpen class="h-5 w-5" />
+              Blog
+            </a>
+          </div>
+
 
           <!-- Docs -->
           <div class="relative">
@@ -317,14 +329,7 @@
 
           <!-- Community Section -->
           <div class="border-t border-gray-200 pt-2">
-            <button
-              onclick={() => (isMobileCommunityDropdownOpen = !isMobileCommunityDropdownOpen)}
-              class="flex w-full flex-row items-center text-left">
-              <p class="grow px-2 py-1 text-xs font-semibold uppercase text-gray-500">Community</p>
-              <ChevronUp
-                class={`h-5 w-5 grow-0 ${isMobileCommunityDropdownOpen ? 'rotate-180' : ''} transition-transform`} />
-            </button>
-            {#if isMobileCommunityDropdownOpen}
+            <p class="grow px-2 py-1 text-xs font-semibold uppercase text-gray-500">Community</p>
               <div transition:slide>
                 <a
                   href="https://discord.gg/YxP6yv9tAV"
@@ -355,39 +360,35 @@
                   <span class="animated-underline">GitHub</span>
                 </a>
               </div>
-            {/if}
           </div>
 
-          <!-- Research Section -->
-          <!--          <div class="border-t border-gray-200 pt-2">-->
-          <!--            <p class="px-2 py-1 text-xs font-semibold uppercase text-gray-500">Research</p>-->
-          <!--            <a-->
-          <!--              href="/datasets"-->
-          <!--              class="flex items-center gap-3 px-2 py-2 text-gray-600 transition-colors hover:text-gray-900">-->
-          <!--              <Database class="h-5 w-5" />-->
-          <!--              Datasets-->
-          <!--            </a>-->
-          <!--            <a-->
-          <!--              href="https://docs.viralmind.ai/"-->
-          <!--              target="_blank"-->
-          <!--              class="flex items-center gap-3 px-2 py-2 text-gray-600 transition-colors hover:text-gray-900">-->
-          <!--              <Book class="h-5 w-5" />-->
-          <!--              Documentation-->
-          <!--            </a>-->
-          <!--          </div>-->
+          <!-- Whitepaper & Blog Section-->
+          <div class="border-t border-gray-200 pt-2">
+            <p class="px-2 py-1 text-xs font-semibold uppercase text-gray-500">Whitepaper & Blog</p>
+            <a
+              href="https://medium.com/@omnimindsai"
+              target="_blank"
+              class="flex items-center gap-3 px-2 py-2 text-gray-600 transition-colors hover:text-gray-900">
+              <BookOpen class="h-5 w-5" />
+              Blog
+            </a>
+            <a
+              href="https://omniminds-ai.gitbook.io/whitepaper"
+              target="_blank"
+              class="flex items-center gap-3 px-2 py-2 text-gray-600 transition-colors hover:text-gray-900">
+              <Book class="h-5 w-5" />
+              Whitepaper
+            </a>
+          </div>
 
-                    <div class="mt-2 border-t border-gray-200 pt-4">
-                      <a
-                        href="/download"
-                        class="flex items-center gap-3 rounded-lg bg-gradient-to-r from-purple-600 to-blue-500 px-4 py-2.5 text-white transition-all hover:from-purple-500 hover:to-blue-400">
-                        <Download class="h-5 w-5 text-white/90" />
-                        <span class="font-medium">Download for Desktop</span>
-                      </a>
-                    </div>
-
-          <!--          <div class="">-->
-          <!--            <WalletMultiButton />-->
-          <!--          </div>-->
+          <div class="mt-2 border-t border-gray-200 pt-4">
+            <a
+              href="/download"
+              class="flex items-center gap-3 rounded-lg bg-gradient-to-r from-purple-600 to-blue-500 px-4 py-2.5 text-white transition-all hover:from-purple-500 hover:to-blue-400">
+              <Download class="h-5 w-5 text-white/90" />
+              <span class="font-medium">Download for Desktop</span>
+            </a>
+          </div>
         </nav>
       </div>
     {/if}

@@ -113,9 +113,9 @@
     } else if (userAgent.includes('win')) {
       detectedOs = 'windows';
       selectedOs = 'windows';
-    } else if (userAgent.includes('linux')) {
-      detectedOs = 'linux';
-      selectedOs = 'linux';
+    // } else if (userAgent.includes('linux')) {
+    //   detectedOs = 'linux';
+    //   selectedOs = 'linux';
     }
 
     // Simple architecture detection (not foolproof)
