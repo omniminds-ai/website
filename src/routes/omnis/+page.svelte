@@ -149,7 +149,7 @@
     </div>
 
     <!-- Tokenomics Section -->
-    <section class="py-24">
+    <section class="py-24 container mx-auto">
       <div class="mx-auto px-4 sm:px-8 lg:px-16">
         <GradientHeading class="mb-16 text-center text-5xl">Tokenomics</GradientHeading>
         <div

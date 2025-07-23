@@ -287,11 +287,10 @@
   
   
   <!-- Testimonials -->
-   <section>
+   <!-- <section>
      <div class="flex">
        <div
          class="glass-effect mx-auto flex flex-col items-center justify-center rounded-2xl border border-gray-900 p-16 flex-1">
-         <!-- Left side content -->
          <GradientHeading class="mb-6 text-4xl">Logo</GradientHeading>
          <GradientHeading class="mb-8 text-lg">
            " Get instant $OMNIS payments when you upload demonstrations.Get instant $OMNIS payments when
@@ -309,7 +308,6 @@
        </div>
        <div
          class="glass-effect mx-auto flex flex-col items-center justify-center rounded-2xl border border-gray-900 p-16 flex-1">
-         <!-- Left side content -->
          <GradientHeading class="mb-6 text-4xl">Logo</GradientHeading>
          <GradientHeading class="mb-8 text-lg">
            " Get instant $OMNIS payments when you upload demonstrations.Get instant $OMNIS payments when
@@ -327,7 +325,6 @@
        </div>
        <div
          class="glass-effect mx-auto flex flex-col items-center justify-center rounded-2xl border border-gray-900 p-16 flex-1">
-         <!-- Left side content -->
          <GradientHeading class="mb-6 text-4xl">Logo</GradientHeading>
          <GradientHeading class="mb-8 text-lg">
            " Get instant $OMNIS payments when you upload demonstrations.Get instant $OMNIS payments when
@@ -344,7 +341,7 @@
          <button class="text-secondary-100">Read Case Study</button>
        </div>
      </div>
-   </section>
+   </section> -->
   
   <!-- Ready to get started? -->
    <section>
@@ -360,7 +357,11 @@
            Signup for free
          </ButtonCTA>
      
-         <Button class="border-none">Book demo</Button>
+         <Button class="border-none">
+          <a href="/download">
+            Download Desktop Application
+          </a>
+        </Button>
        </div>
      </div>
    </section>

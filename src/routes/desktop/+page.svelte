@@ -461,7 +461,11 @@
           Signup for free
         </ButtonCTA>
 
-        <Button class="border-none">Book demo</Button>
+        <Button class="border-none">
+          <a href="/download">
+            Download Desktop Application
+          </a>
+        </Button>
       </div>
     </div>
   </section>

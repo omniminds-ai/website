@@ -69,7 +69,7 @@
           <!-- Ecosystem Dropdown -->
           <div class="relative">
             <button
-              class="navbar-dropdown-button group flex items-center gap-2 text-sm font-medium text-white transition-colors hover:text-gray-900"
+              class="navbar-dropdown-button group flex items-center gap-2 text-sm font-medium text-white transition-colors hover:text-accent-200"
               onclick={() => (isDropdownOpen = isDropdownOpen === 'ecosystem' ? null : 'ecosystem')}
               onblur={(e) => {
                 // Only close if not clicking another dropdown button
@@ -84,7 +84,7 @@
 
             {#if isDropdownOpen === 'ecosystem'}
               <div
-                class="absolute left-0 mt-2 w-72 rounded-lg border border-gray-200 bg-white p-2 shadow-lg"
+                class="absolute left-0 mt-2 w-72 rounded-lg border border-secondary-300 bg-primary-200 p-2 shadow-lg"
                 transition:slide>
                 <a
                   href="/omnis"
@@ -93,8 +93,8 @@
                     <Coins class="h-4 w-4 text-purple-500" />
                   </div>
                   <div>
-                    <div class="font-medium text-gray-900">$OMNIS</div>
-                    <div class="text-xs text-gray-500">$OMNIS Tokenomics</div>
+                    <div class="font-medium">$OMNIS</div>
+                    <div class="text-xs">$OMNIS Tokenomics</div>
                   </div>
                 </a>
                 <a
@@ -104,8 +104,8 @@
                     <Monitor class="h-4 w-4 min-w-4 text-purple-500" />
                   </div>
                   <div>
-                    <div class="font-medium text-gray-900">Omniminds Desktop</div>
-                    <div class="text-xs text-gray-500">All-in-one AI application</div>
+                    <div class="font-medium">Omniminds Desktop</div>
+                    <div class="text-xs">All-in-one AI application</div>
                   </div>
                 </a>
                 <a
@@ -115,8 +115,8 @@
                     <Dumbbell class="h-4 w-4 text-purple-500" />
                   </div>
                   <div>
-                    <div class="font-medium text-gray-900">The Arena</div>
-                    <div class="text-xs text-gray-500">Contribute demonstrations</div>
+                    <div class="font-medium">The Arena</div>
+                    <div class="text-xs">Contribute demonstrations</div>
                   </div>
                 </a>
                 <a
@@ -126,8 +126,8 @@
                     <Hammer class="h-4 w-4 text-purple-500" />
                   </div>
                   <div>
-                    <div class="font-medium text-gray-900">The Dojo</div>
-                    <div class="text-xs text-gray-500">Build custom agents</div>
+                    <div class="font-medium">The Dojo</div>
+                    <div class="text-xs">Build custom agents</div>
                   </div>
                 </a>
                 <!--                <a-->
@@ -148,7 +148,7 @@
           <!-- Community Dropdown -->
           <div class="relative">
             <button
-              class="navbar-dropdown-button group flex items-center gap-2 text-sm font-medium text-white transition-colors hover:text-gray-900"
+              class="navbar-dropdown-button group flex items-center gap-2 text-sm font-medium text-white transition-colors hover:text-accent-200"
               onclick={() => (isDropdownOpen = isDropdownOpen === 'community' ? null : 'community')}
               onblur={(e) => {
                 // Only close if not clicking another dropdown button
@@ -163,7 +163,7 @@
 
             {#if isDropdownOpen === 'community'}
               <div
-                class="absolute left-0 mt-2 w-48 rounded-lg border border-gray-200 bg-white py-2 shadow-lg"
+                class="absolute left-0 mt-2 w-48 rounded-lg border border-secondary-300 bg-primary-200 py-2 shadow-lg"
                 transition:slide>
                 <a
                   href="https://discord.gg/YxP6yv9tAV"
@@ -200,7 +200,7 @@
           <!-- Docs -->
           <div class="relative">
             <a href="https://omniminds-ai.gitbook.io/whitepaper" target="_blank"
-              class="navbar-dropdown-button group flex items-center gap-2 text-sm font-medium hover:bg-gray-50 hover:text-gray-900 transition-colors">
+              class="navbar-dropdown-button group flex items-center gap-2 text-sm font-medium hover:text-accent-200 transition-colors">
               Whitepaper
             </a>
           </div>
@@ -253,7 +253,7 @@
                   href="/download"
                   class="group hidden items-center gap-3 rounded-full bg-gradient-to-r from-secondary-100 to-secondary-200 py-3 px-5 text-white text-sm shadow-purple-500/20 transition-all hover:scale-[1.02] sm:flex">
                   <div class="flex items-center gap-2">
-                    <span>Book a demo</span>
+                    <span>Download Desktop Application</span>
                   </div>
                 </a>
 
