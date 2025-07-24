@@ -59,7 +59,7 @@
             src={logoTitle}
             alt="OmniMinds"
             class="hidden w-[140px] transition-transform group-hover:scale-105 lg:block" />
-          <img src={logo} alt="OmniMinds" class="block h-10 transition-transform lg:hidden" />
+          <img src={logo} alt="Omniminds" class="block h-10 transition-transform lg:hidden" />
         </a>
       </div>
 
@@ -84,11 +84,11 @@
 
             {#if isDropdownOpen === 'ecosystem'}
               <div
-                class="absolute left-0 mt-2 w-72 rounded-lg border border-secondary-300 bg-primary-200 p-2 shadow-lg"
+                class="absolute left-0 mt-2 w-72 rounded-md bg-primary-400 p-2 shadow-lg"
                 transition:slide>
                 <a
                   href="/omnis"
-                  class="flex items-center gap-3 rounded-lg p-3 text-sm text-white transition-colors hover:bg-gray-50 hover:text-gray-900">
+                  class="flex items-center gap-3 rounded-lg p-3 text-sm text-white transition-colors hover:bg-gray-200 hover:text-gray-700">
                   <div class="flex h-8 w-8 items-center justify-center rounded-lg bg-purple-500/10">
                     <Coins class="h-4 w-4 text-purple-500" />
                   </div>
@@ -99,7 +99,7 @@
                 </a>
                 <a
                   href="/desktop"
-                  class="flex items-center gap-3 rounded-lg p-3 text-sm text-white transition-colors hover:bg-gray-50 hover:text-gray-900">
+                  class="flex items-center gap-3 rounded-lg p-3 text-sm text-white transition-colors hover:bg-gray-200 hover:text-gray-700">
                   <div class="flex h-8 w-8 items-center justify-center rounded-lg bg-purple-500/10">
                     <Monitor class="h-4 w-4 min-w-4 text-purple-500" />
                   </div>
@@ -110,7 +110,7 @@
                 </a>
                 <a
                   href="/desktop#arena"
-                  class="ml-4 flex items-center gap-3 rounded-lg p-3 text-sm text-white transition-colors hover:bg-gray-50 hover:text-gray-900">
+                  class="ml-4 flex items-center gap-3 rounded-lg p-3 text-sm text-white transition-colors hover:bg-gray-200 hover:text-gray-700">
                   <div class="flex h-8 w-8 items-center justify-center rounded-lg bg-purple-500/10">
                     <Dumbbell class="h-4 w-4 text-purple-500" />
                   </div>
@@ -121,7 +121,7 @@
                 </a>
                 <a
                   href="/desktop#dojo"
-                  class="ml-4 flex items-center gap-3 rounded-lg p-3 text-sm text-white transition-colors hover:bg-gray-50 hover:text-gray-900">
+                  class="ml-4 flex items-center gap-3 rounded-lg p-3 text-sm text-white transition-colors hover:bg-gray-200 hover:text-gray-700">
                   <div class="flex h-8 w-8 items-center justify-center rounded-lg bg-purple-500/10">
                     <Hammer class="h-4 w-4 text-purple-500" />
                   </div>
@@ -163,33 +163,33 @@
 
             {#if isDropdownOpen === 'community'}
               <div
-                class="absolute left-0 mt-2 w-48 rounded-lg border border-secondary-300 bg-primary-200 py-2 shadow-lg"
+                class="absolute left-0 mt-2 px-2 w-48 rounded-md  bg-primary-400 py-2 shadow-lg"
                 transition:slide>
                 <a
                   href="https://discord.gg/YxP6yv9tAV"
                   target="_blank"
-                  class="disabled flex items-center gap-2 px-4 py-2 text-sm text-white transition-colors hover:bg-gray-50 hover:text-gray-900">
+                  class="disabled flex items-center gap-2 rounded-lg text-sm px-4 py-2 text-white transition-colors hover:bg-gray-200 hover:text-gray-700">
                   <i class="si si-discord h-4 w-4" />
                   Discord
                 </a>
                 <a
                   href="https://t.me/omnimindsai"
                   target="_blank"
-                  class="flex items-center gap-2 px-4 py-2 text-sm text-white transition-colors hover:bg-gray-50 hover:text-gray-900">
+                  class="flex items-center gap-2 px-4 py-2 rounded-lg text-sm text-white transition-colors hover:bg-gray-50 hover:text-gray-900">
                   <i class="si si-telegram h-4 w-4" />
                   Telegram
                 </a>
                 <a
                   href="https://twitter.com/omnimindsai"
                   target="_blank"
-                  class="flex items-center gap-2 px-4 py-2 text-sm text-white transition-colors hover:bg-gray-50 hover:text-gray-900">
+                  class="flex items-center gap-2 px-4 py-2 rounded-lg text-sm text-white transition-colors hover:bg-gray-50 hover:text-gray-900">
                   <i class="si si-twitter h-4 w-4" />
                   Twitter
                 </a>
                 <a
                   href="https://github.com/omniminds-ai"
                   target="_blank"
-                  class="flex items-center gap-2 px-4 py-2 text-sm text-white transition-colors hover:bg-gray-50 hover:text-gray-900">
+                  class="flex items-center gap-2 px-4 py-2 rounded-lg text-sm text-white transition-colors hover:bg-gray-50 hover:text-gray-900">
                   <i class="si si-github h-4 w-4" />
                   GitHub
                 </a>
@@ -202,6 +202,12 @@
             <a href="https://omniminds-ai.gitbook.io/whitepaper" target="_blank"
               class="navbar-dropdown-button group flex items-center gap-2 text-sm font-medium hover:text-accent-200 transition-colors">
               Whitepaper
+            </a>
+          </div>
+          <div class="relative">
+            <a href="https://medium.com/@omnimindsai" target="_blank"
+               class="navbar-dropdown-button group flex items-center gap-2 text-sm font-medium hover:text-accent-200 transition-colors">
+              Blog
             </a>
           </div>
 
@@ -274,39 +280,39 @@
     {#if isMobileMenuOpen}
       <div
         transition:slide
-        class="absolute left-0 right-0 top-16 border-b border-gray-200 bg-white/95 backdrop-blur-lg lg:hidden">
+        class="absolute left-0 right-0 top-16  rounded-lg bg-primary-400 backdrop-blur-lg lg:hidden">
         <nav class="space-y-2 px-6 py-2">
           <!-- Ecosystem Section -->
-          <div class="border-t border-gray-200 pt-2">
+          <div class="pt-1">
             <p class="px-2 py-1 text-xs font-semibold uppercase text-gray-500">Ecosystem</p>
             <a
               href="/omnis"
-              class="flex items-center gap-3 px-2 py-2 text-white transition-colors hover:text-gray-900">
+              class="flex items-center gap-3 px-2 py-2 text-gray-200 transition-colors hover:text-gray-900 hover:bg-gray-200 rounded-lg">
               <Coins class="h-5 w-5" />
               $OMNIS
             </a>
             <a
               href="/desktop"
-              class="flex items-center gap-3 px-2 py-2 text-white transition-colors hover:text-gray-900">
+              class="flex items-center gap-3 px-2 py-2 text-gray-200 transition-colors hover:text-gray-900 hover:bg-gray-200 rounded-lg">
               <Monitor class="h-5 w-5 min-w-5" />
               Omniminds Desktop
             </a>
             <a
               href="/desktop#arena"
-              class="ml-5 flex items-center gap-3 px-2 py-2 text-white transition-colors hover:text-gray-900">
+              class="ml-5 flex items-center gap-3 px-2 py-2 text-gray-200 transition-colors hover:text-gray-900 hover:bg-gray-200 rounded-lg">
               <Dumbbell class="h-5 w-5" />
               The Arena
             </a>
             <a
               href="/desktop#dojo"
-              class="ml-5 flex items-center gap-3 px-2 py-2 text-white transition-colors hover:text-gray-900">
+              class="ml-5 flex items-center gap-3 px-2 py-2 text-gray-200 transition-colors hover:text-gray-900 hover:bg-gray-200 rounded-lg">
               <Hammer class="h-5 w-5" />
               The Dojo
               </a>
           </div>
 
           <!-- Community Section -->
-          <div class="border-t border-gray-200 pt-2">
+          <div class="border-t border-gray-400 pt-2">
             <button
               onclick={() => (isMobileCommunityDropdownOpen = !isMobileCommunityDropdownOpen)}
               class="flex w-full flex-row items-center text-left">
@@ -319,28 +325,28 @@
                 <a
                   href="https://discord.gg/YxP6yv9tAV"
                   target="_blank"
-                  class="disabled flex items-center gap-3 px-2 py-2 text-white transition-colors hover:text-gray-900">
+                  class="disabled flex items-center gap-3 px-2 py-2 text-white transition-colors hover:text-gray-900 hover:bg-gray-200 rounded-lg">
                   <i class="si si-discord h-5 w-5" />
                   Discord
                 </a>
                 <a
                   href="https://t.me/omnimindsai"
                   target="_blank"
-                  class="flex items-center gap-3 px-2 py-2 text-white transition-colors hover:text-gray-900">
+                  class="flex items-center gap-3 px-2 py-2 text-white transition-colors hover:text-gray-900 hover:bg-gray-200 rounded-lg">
                   <i class="si si-telegram h-5 w-5" />
                   Telegram
                 </a>
                 <a
                   href="https://twitter.com/omnimindsai"
                   target="_blank"
-                  class="flex items-center gap-3 px-2 py-2 text-white transition-colors hover:text-gray-900">
+                  class="flex items-center gap-3 px-2 py-2 text-white transition-colors hover:text-gray-900 hover:bg-gray-200 rounded-lg">
                   <i class="si si-twitter h-5 w-5" />
                   Twitter
                 </a>
                 <a
                   href="https://github.com/omniminds-ai"
                   target="_blank"
-                  class="flex items-center gap-3 px-2 py-2 text-white transition-colors hover:text-gray-900">
+                  class="flex items-center gap-3 px-2 py-2 text-white transition-colors hover:text-gray-900 hover:bg-gray-200 rounded-lg">
                   <i class="si si-github h-5 w-5" />
                   <span class="animated-underline">GitHub</span>
                 </a>
@@ -348,36 +354,30 @@
             {/if}
           </div>
 
-          <!-- Research Section -->
-          <!--          <div class="border-t border-gray-200 pt-2">-->
-          <!--            <p class="px-2 py-1 text-xs font-semibold uppercase text-gray-500">Research</p>-->
-          <!--            <a-->
-          <!--              href="/datasets"-->
-          <!--              class="flex items-center gap-3 px-2 py-2 text-white transition-colors hover:text-gray-900">-->
-          <!--              <Database class="h-5 w-5" />-->
-          <!--              Datasets-->
-          <!--            </a>-->
-          <!--            <a-->
-          <!--              href="https://docs.viralmind.ai/"-->
-          <!--              target="_blank"-->
-          <!--              class="flex items-center gap-3 px-2 py-2 text-white transition-colors hover:text-gray-900">-->
-          <!--              <Book class="h-5 w-5" />-->
-          <!--              Documentation-->
-          <!--            </a>-->
-          <!--          </div>-->
+          <div class="border-t border-gray-400 pt-2">
+            <p class="px-2 py-1 text-xs font-semibold uppercase text-gray-500">Whitepaper & Blog</p>
+            <a
+              href="https://medium.com/@omnimindsai"
+              target="_blank"
+              class="flex items-center gap-3 px-2 py-2 text-gray-200 transition-colors hover:text-gray-900 hover:bg-gray-200 rounded-lg">
+              Blog
+            </a>
+            <a
+              href="https://omniminds-ai.gitbook.io/whitepaper"
+              target="_blank"
+              class="flex items-center gap-3 px-2 py-2 text-gray-200 transition-colors hover:text-gray-900 hover:bg-gray-200 rounded-lg">
+              Whitepaper
+            </a>
+          </div>
 
-                    <div class="mt-2 border-t border-gray-200 pt-4">
-                      <a
-                        href="/download"
-                        class="flex items-center gap-3 rounded-lg bg-gradient-to-r from-purple-600 to-blue-500 px-4 py-2.5 text-white transition-all hover:from-purple-500 hover:to-blue-400">
-                        <Download class="h-5 w-5 text-white/90" />
-                        <span class="font-medium">Download for Desktop</span>
-                      </a>
-                    </div>
-
-          <!--          <div class="">-->
-          <!--            <WalletMultiButton />-->
-          <!--          </div>-->
+          <div class="mt-2 border-t border-gray-200 pt-4">
+            <a
+              href="/download"
+              class="flex items-center gap-3 rounded-lg bg-gradient-to-r from-purple-600 to-blue-500 px-4 py-2.5 text-white transition-all hover:from-purple-500 hover:to-blue-400">
+              <Download class="h-5 w-5 text-white/90" />
+              <span class="font-medium">Download for Desktop</span>
+            </a>
+          </div>
         </nav>
       </div>
     {/if}

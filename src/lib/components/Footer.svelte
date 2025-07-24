@@ -61,7 +61,12 @@
 
         <div class="mt-5 lg:mt-0">
           <h4 class="hover:text-accent-200">
-            <a href="https://omniminds-ai.gitbook.io/whitepaper" target="_blank" rel="noopener noreferrer">Whitepaper</a></h4>
+            <a href="https://omniminds-ai.gitbook.io/whitepaper" target="_blank" rel="noopener noreferrer">Whitepaper</a>
+          </h4>
+          <h4 class="hover:text-accent-200 mt-1">
+            <a href="https://medium.com/@omnimindsai" target="_blank" rel="noopener noreferrer">Blog</a>
+          </h4>
+
         </div>
       </div>
     </div>
