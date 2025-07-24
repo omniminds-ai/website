@@ -3,9 +3,11 @@
   import { walletStore } from '$lib/walletStore';
   import { Coins } from 'lucide-svelte';
   import { Buffer } from 'buffer';
+  import BgEffect from '$lib/assets/bg-effect.svg'
 
   let token = $state('');
   let connecting = $state(false);
+
 
   onMount(() => {
     // Get token from URL query parameter
@@ -78,43 +80,44 @@
     }
   }
 </script>
-
-<div class="flex min-h-screen flex-col items-center justify-center bg-gray-50">
-  <div class="mx-4 max-w-md rounded-2xl border border-gray-200 bg-white p-8 shadow-lg">
-    <div class="mb-8 text-center">
-      <div
-        class="mx-auto mb-5 flex h-16 w-16 items-center justify-center rounded-full bg-gradient-to-r from-purple-500/10 to-blue-500/10">
-        <Coins class="h-8 w-8 text-gray-600" />
+<section class="relative min-h-screen overflow-hidden !bg-no-repeat !bg-cover" style={`background: url(${BgEffect})`}>
+  <div class="flex min-h-screen flex-col items-center justify-center">
+    <div class="mx-4 max-w-md rounded-2xl border border-gray-200 bg-white p-8 shadow-lg">
+      <div class="mb-8 text-center">
+        <div
+          class="mx-auto mb-5 flex h-16 w-16 items-center justify-center rounded-full bg-gradient-to-r from-purple-500/10 to-blue-500/10">
+          <Coins class="h-8 w-8 text-gray-600" />
+        </div>
+        <h1 class="mb-2 text-2xl font-bold text-gray-800">Connect Your Wallet</h1>
+        <p class="text-gray-600">Connect your Phantom wallet to continue using Omniminds Desktop</p>
       </div>
-      <h1 class="mb-2 text-2xl font-bold text-gray-800">Connect Your Wallet</h1>
-      <p class="text-gray-600">Connect your Phantom wallet to continue using Omniminds Desktop</p>
+
+      {#if !token}
+        <div class="mb-4 rounded-lg bg-red-50 p-4 text-center text-red-600">
+          Error: No connection token provided
+        </div>
+      {:else}
+        <button
+          on:click={connectWallet}
+          disabled={connecting}
+          class="flex w-full items-center justify-center gap-2 rounded-full bg-gradient-to-r from-purple-500 to-blue-500 px-6 py-3 font-medium text-white transition-all duration-200 hover:opacity-90 disabled:cursor-not-allowed disabled:opacity-50">
+          {#if connecting}
+            <div class="h-4 w-4 animate-spin rounded-full border-2 border-white/30 border-t-white">
+            </div>
+            Connecting...
+          {:else}
+            Connect Phantom Wallet
+          {/if}
+        </button>
+
+        <a
+          href="https://phantom.app/download"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="mt-4 block text-center text-sm text-gray-500 transition-colors hover:text-gray-800">
+          Don't have Phantom wallet? Click here to install
+        </a>
+      {/if}
     </div>
-
-    {#if !token}
-      <div class="mb-4 rounded-lg bg-red-50 p-4 text-center text-red-600">
-        Error: No connection token provided
-      </div>
-    {:else}
-      <button
-        on:click={connectWallet}
-        disabled={connecting}
-        class="flex w-full items-center justify-center gap-2 rounded-full bg-gradient-to-r from-purple-500 to-blue-500 px-6 py-3 font-medium text-white transition-all duration-200 hover:opacity-90 disabled:cursor-not-allowed disabled:opacity-50">
-        {#if connecting}
-          <div class="h-4 w-4 animate-spin rounded-full border-2 border-white/30 border-t-white">
-          </div>
-          Connecting...
-        {:else}
-          Connect Phantom Wallet
-        {/if}
-      </button>
-
-      <a
-        href="https://phantom.app/download"
-        target="_blank"
-        rel="noopener noreferrer"
-        class="mt-4 block text-center text-sm text-gray-500 transition-colors hover:text-gray-800">
-        Don't have Phantom wallet? Click here to install
-      </a>
-    {/if}
   </div>
-</div>
+</section>
