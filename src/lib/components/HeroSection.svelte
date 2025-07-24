@@ -78,29 +78,29 @@
     </div>
 
     <!-- Partners Section -->
-    <div class="w-full max-w-6xl z-20 relative">
-      <p class="text-center text-gray-400 text-sm mb-8 uppercase tracking-wider">
-        Partners & Development programs
-      </p>
-      
-      <div class="grid grid-cols-2 md:grid-cols-5 gap-8 items-center justify-items-center">
-        <!-- Placeholder partner logos -->
-        <div class="flex items-center justify-center h-12 opacity-60 hover:opacity-100 transition-opacity duration-300">
-          <img src="{partner_1}" alt="">
-        </div>
-        <div class="flex items-center justify-center h-12 opacity-60 hover:opacity-100 transition-opacity duration-300">
-          <img src="{partner_2}" alt="">
-        </div>
-        <div class="flex items-center justify-center h-12 opacity-60 hover:opacity-100 transition-opacity duration-300">
-          <img src="{partner_3}" alt="">
-        </div>
-        <div class="flex items-center justify-center h-12 opacity-60 hover:opacity-100 transition-opacity duration-300">
-          <img src="{partner_4}" alt="">
-        </div>
-        <div class="flex items-center justify-center h-12 opacity-60 hover:opacity-100 transition-opacity duration-300">
-            <img src="{partner_5}" alt="">
-        </div>
-      </div>
-    </div>
+<!--    <div class="w-full max-w-6xl z-20 relative">-->
+<!--      <p class="text-center text-gray-400 text-sm mb-8 uppercase tracking-wider">-->
+<!--        Partners & Development programs-->
+<!--      </p>-->
+<!--      -->
+<!--      <div class="grid grid-cols-2 md:grid-cols-5 gap-8 items-center justify-items-center">-->
+<!--        &lt;!&ndash; Placeholder partner logos &ndash;&gt;-->
+<!--        <div class="flex items-center justify-center h-12 opacity-60 hover:opacity-100 transition-opacity duration-300">-->
+<!--          <img src="{partner_1}" alt="">-->
+<!--        </div>-->
+<!--        <div class="flex items-center justify-center h-12 opacity-60 hover:opacity-100 transition-opacity duration-300">-->
+<!--          <img src="{partner_2}" alt="">-->
+<!--        </div>-->
+<!--        <div class="flex items-center justify-center h-12 opacity-60 hover:opacity-100 transition-opacity duration-300">-->
+<!--          <img src="{partner_3}" alt="">-->
+<!--        </div>-->
+<!--        <div class="flex items-center justify-center h-12 opacity-60 hover:opacity-100 transition-opacity duration-300">-->
+<!--          <img src="{partner_4}" alt="">-->
+<!--        </div>-->
+<!--        <div class="flex items-center justify-center h-12 opacity-60 hover:opacity-100 transition-opacity duration-300">-->
+<!--            <img src="{partner_5}" alt="">-->
+<!--        </div>-->
+<!--      </div>-->
+<!--    </div>-->
   </div>
 </section>
