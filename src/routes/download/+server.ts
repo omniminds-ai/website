@@ -31,13 +31,13 @@ export const GET: RequestHandler = async () => {
         //   url: `${baseUrl}Viralmind.Desktop_${version}_amd64.deb`
         // },
         'windows-x86_64': {
-          url: `$https://github.com/omniminds-ai/desktop/releases/download/v0.1.5/omniminds-desktop.exe`
+          url: `https://github.com/omniminds-ai/desktop/releases/download/V0.1.6/omniminds-desktop.exe`
         },
         // 'windows-arm64': {
         //   url: `${baseUrl}Viralmind.Desktop_${version}_arm64_en-US.msi `
         // },
         'darwin-aarch64': {
-          url: `https://github.com/omniminds-ai/desktop/releases/download/v0.1.5/Omniminds.Desktop_0.1.5_aarch64.dmg`
+          url: `https://github.com/omniminds-ai/desktop/releases/download/V0.1.6/Omniminds.Desktop_0.1.6_aarch64.dmg`
         }
       }
     });
