@@ -273,6 +273,7 @@
         Get instant $OMNIS payments when you upload demonstrations.
       </GradientHeading>
       <ButtonCTA
+        href="/download"
         class="w-fit">
         Explore Now
       </ButtonCTA>
@@ -353,15 +354,13 @@
          Get instant $OMNIS payments when you upload demonstrations.
        </GradientHeading>
        <div class="flex gap-4">
-         <ButtonCTA >
-           Signup for free
-         </ButtonCTA>
-     
-         <Button class="border-none">
-          <a href="/download">
-            Download Desktop Application
-          </a>
-        </Button>
+         <a
+           href="/download"
+           class="group hidden items-center gap-3 rounded-full bg-gradient-to-r from-secondary-100 to-secondary-200 py-3 px-5 text-white text-sm shadow-purple-500/20 transition-all hover:scale-[1.02] sm:flex">
+           <div class="flex items-center gap-2">
+             <span>Download Desktop Application</span>
+           </div>
+         </a>
        </div>
      </div>
    </section>

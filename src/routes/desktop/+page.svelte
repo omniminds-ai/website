@@ -245,37 +245,37 @@
               <!-- Forge Intelligence -->
               <div class="flex h-[200px] w-[200px] flex-col items-center justify-center">
                 <div class="flex flex-col items-center text-center">
-                  <Bot class="mb-6 h-20 w-20 text-secondary-200" />
-                  <h2 class="text-lg font-bold text-secondary-200">Dojo AI</h2>
+                  <Bot class="mb-6 h-20 w-20 text-secondary-400" />
+                  <h2 class="text-lg font-bold text-secondary-400">Dojo AI</h2>
                   <p class="mt-2 text-sm text-accent-200">Generates diverse training scenarios</p>
                 </div>
               </div>
 
               <!-- Arrow 1 -->
               <div class="mt-6 flex w-[100px] items-start justify-center">
-                <ArrowRight class="h-8 w-8 text-secondary-200" />
+                <ArrowRight class="h-8 w-8 text-secondary-400" />
               </div>
 
               <!-- Human Trainers -->
               <div
                 class="z-10 flex h-[200px] w-[200px] flex-col items-center justify-center rounded-xl">
                 <div class="flex flex-col items-center text-center">
-                  <User class="mb-6 h-20 w-20 text-secondary-200" />
-                  <h2 class="text-lg font-bold text-secondary-200">Human Trainers</h2>
+                  <User class="mb-6 h-20 w-20 text-secondary-400" />
+                  <h2 class="text-lg font-bold text-secondary-400">Human Trainers</h2>
                   <p class="mt-2 text-sm text-accent-200">Expert recordings, real environments</p>
                 </div>
               </div>
 
               <!-- Arrow 2 -->
               <div class="mt-6 flex w-[100px] items-start justify-center">
-                <ArrowRight class="h-8 w-8 text-secondary-200" />
+                <ArrowRight class="h-8 w-8 text-secondary-400" />
               </div>
 
               <!-- AI Judge -->
               <div class="flex h-[200px] w-[200px] flex-col items-center justify-center rounded-xl">
                 <div class="flex flex-col items-center text-center">
-                  <Hammer class="mb-6 h-20 w-20 text-secondary-200" />
-                  <h3 class="text-lg font-bold text-secondary-200">AI Judge</h3>
+                  <Hammer class="mb-6 h-20 w-20 text-secondary-400" />
+                  <h3 class="text-lg font-bold text-secondary-400">AI Judge</h3>
                   <p class="mt-2 text-sm text-accent-200">Quality assessment for dynamic rewards</p>
                 </div>
               </div>
@@ -457,15 +457,9 @@
         Get instant $OMNIS payments when you upload demonstrations.
       </GradientHeading>
       <div class="flex gap-4">
-        <ButtonCTA class="rounded-full bg-secondary-100 px-8 py-3 text-white transition-colors">
-          Signup for free
+        <ButtonCTA href="/download" class="rounded-full bg-secondary-100 px-8 py-3 text-white transition-colors">
+          Download Desktop Application
         </ButtonCTA>
-
-        <Button class="border-none">
-          <a href="/download">
-            Download Desktop Application
-          </a>
-        </Button>
       </div>
     </div>
   </section>

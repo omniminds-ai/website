@@ -4,7 +4,7 @@
   import GradientHeading from '$lib/components/GradientHeading.svelte';
   import ButtonCTA from '$lib/components/ButtonCTA.svelte';
   import gym from '$lib/assets/gym.png';
-
+  import BgEffect from '$lib/assets/bg-effect.svg'
 
   let version = $state('0.15');
 
@@ -110,6 +110,7 @@
 </svelte:head>
 
 <main class="min-h-screen">
+  <section class="relative min-h-screen overflow-hidden !bg-no-repeat !bg-cover" style={`background: url(${BgEffect})`}>
   <div class="py-24">
     <div class="mx-auto max-w-7xl px-4 text-center sm:px-8 lg:px-16">
       <!-- Version Badge -->
@@ -129,35 +130,35 @@
       </GradientHeading>
 
       <!-- Platform Selection -->
-      <div class="mb-16 flex justify-center gap-8">
+      <div class="mb-16 flex  justify-center gap-8">
         <!-- MacOS Option -->
         <button
           class="w-[377px] h-[215px]  group flex flex-col items-center justify-center p-8 rounded-2xl transition-all hover:scale-105 {selectedOs === 'mac' ? 'border border-secondary-300' : ''}"
           onclick={() => selectedOs = 'mac'}>
+          <i class="si si-apple mb-3 text-4xl text-white"></i>
+          <GradientHeading class="text-xl font-semibold">MacOS</GradientHeading>
           {#if detectedOs === 'mac'}
-            <div class="mb-2">
+            <div class="mt-5">
               <span class="rounded-full border border-secondary-300 px-3 py-1 text-xs text-secondary-300">
                 Recommended
               </span>
             </div>
           {/if}
-          <i class="si si-apple mb-3 text-4xl text-white"></i>
-          <GradientHeading class="text-xl font-semibold">MacOS</GradientHeading>
         </button>
 
         <!-- Windows Option -->
         <button
           class="w-[377px] h-[215px] group flex flex-col items-center rounded-2xl p-8 transition-all hover:scale-105 {selectedOs === 'windows' ? 'border border-secondary-300' : ''}"
           onclick={() => selectedOs = 'windows'}>
+          <i class="si si-windows mb-3 text-4xl text-white"></i>
+          <GradientHeading class="text-xl font-semibold">Windows</GradientHeading>
           {#if detectedOs === 'windows'}
-            <div class="mb-5">
+            <div class="mt-5">
               <span class="rounded-full border border-secondary-300 px-3 py-1 text-xs text-secondary-300">
                 Recommended
               </span>
             </div>
           {/if}
-          <i class="si si-windows mb-3 text-4xl text-white"></i>
-          <h3 class="text-xl font-semibold text-accent-200">Windows</h3>
         </button>
       </div>
 
@@ -198,6 +199,7 @@
       </div>
     </div>
   </div>
+  </section>
 
   <!-- App Features -->
   <div class="px-4 py-20">
