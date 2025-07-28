@@ -1,6 +1,5 @@
 <script lang="ts">
-  import logo from '$lib/assets/logo.png';
-  import logoTitle from '$lib/assets/Logo_Standard_light.svg';
+
 </script>
 
 <!-- Spacer to prevent content from going under fixed navbar -->
@@ -13,10 +12,10 @@
         <div class="mb-auto flex space-x-8">
           <a href="/" class="group flex">
             <img
-              src={logoTitle}
-              alt="OmniMinds"
+              src="/logo-light.svg"
+              alt="Omniminds"
               class="hidden w-[140px] transition-transform group-hover:scale-105 lg:block" />
-            <img src={logo} alt="OmniMinds" class="block h-10 transition-transform lg:hidden mb-10" />
+            <img src="/logo-icon.png" alt="Omniminds" class="block h-10 transition-transform lg:hidden mb-10" />
           </a>
         </div>
 

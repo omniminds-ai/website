@@ -1,7 +1,6 @@
 <script lang="ts">
   import '../app.css';
   import Navbar from '$lib/components/Navbar.svelte';
-  import GymHeader from '$lib/components/GymHeader.svelte';
   import Footer from '$lib/components/Footer.svelte';
   import { page } from '$app/state';
   import WalletProvider from '$lib/components/solana/WalletProvider.svelte';
@@ -12,9 +11,6 @@
 
   const localStorageKey = 'walletAdapter';
   const walletAdapters = [new PhantomWalletAdapter(), new SolflareWalletAdapter()];
-
-  const isGymRoute = $derived(page.url.pathname.startsWith('/gym'));
-  const isTournamentRoute = $derived(page.url.pathname.startsWith('/tournament'));
 
   const title = $derived.by(() => {
     let pre = 'Omniminds.ai';
@@ -49,18 +45,15 @@
 
 <WalletProvider {localStorageKey} wallets={walletAdapters} autoConnect />
 <div class="bg-primary-100 overflow-x-hidden">
-  {#if isGymRoute}
-    <GymHeader />
-  {:else}
-    <Navbar />
-  {/if}
+  <Navbar />
   <div>
-<div class="absolute overflow-hidden top-[-55%] left-1/2 -translate-x-1/2 w-[375px] h-[900px] lg:w-[964px] lg:h-[1022px] rounded-full bg-secondary-100 blur-[300px] opacity-80"></div>
-{@render children()}
-</div>
-  {#if !isTournamentRoute}
-    <Footer />
-  {/if}
+    <div class="absolute overflow-hidden top-[-55%] left-1/2 -translate-x-1/2 w-[375px] h-[900px] lg:w-[964px] lg:h-[1022px] rounded-full bg-secondary-100 blur-[300px] opacity-80">
+    </div>
+    {@render children()}
+  </div>
+
+  <Footer />
+
   <!-- Google tag (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-YHVTLY9G7H"></script>
   <script>

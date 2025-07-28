@@ -1,12 +1,8 @@
 <script lang="ts">
-  import logo_full from '$lib/assets/Logo_Standard_dark.png';
-  import logo from '$lib/assets/logo.png';
-  import exampleUsage from '$lib/assets/exampleusage.mp4';
   import gym from '$lib/assets/gym.png';
   import Button from '$lib/components/Button.svelte';
   import HeroSection from '$lib/components/HeroSection.svelte';
   import GradientHeading from '$lib/components/GradientHeading.svelte';
-  import ParticlesBackground from '$lib/components/ParticlesBackground.svelte';
   import ButtonCTA from '$lib/components/ButtonCTA.svelte';
   import { onMount } from 'svelte';
 
@@ -110,7 +106,6 @@
     // Fetch settings
     fetch('https://api.omniminds.ai/v1/settings')
       .then(async (res) => {
-        console.log({ res });
         if (!res.ok) throw Error(res.status + ': ' + res.statusText);
         const result = await res.json();
         settings = result.success ? result.data : result;
@@ -128,9 +123,9 @@
 <!-- Hero Section -->
 <HeroSection />
 
-<div class="space-y-52">
+<div class="space-y-52 bg-primary-100">
   <!-- Features Section -->
-  <section>
+  <section >
     <div class="mx-auto flex max-w-7xl flex-col gap-24 px-4">
       <!-- Training Gym -->
       <GradientHeading class="text-4xl">AI agents built from your data</GradientHeading>

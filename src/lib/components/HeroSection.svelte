@@ -57,22 +57,6 @@
             <!-- Overlay for better integration -->
             <div class="absolute inset-0 bg-gradient-to-t from-gray-900/30 via-transparent to-gray-900/30"></div>
           </div>
-          
-          <!-- Interface Elements Overlay -->
-          <div class="absolute top-4 left-4 right-4 flex items-center justify-between">
-            <!-- Omnimind Logo/Brand -->
-            <div class="flex items-center gap-2 bg-black/50 backdrop-blur-sm rounded-lg px-3 py-2">
-              <div class="w-3 h-3 bg-gradient-to-r from-cyan-400 to-purple-400 rounded-full animate-pulse"></div>
-              <span class="text-white text-sm font-medium">Omnimind</span>
-            </div>
-            
-            <!-- Window Controls -->
-            <div class="flex items-center gap-2">
-              <div class="w-3 h-3 bg-red-400 rounded-full"></div>
-              <div class="w-3 h-3 bg-yellow-400 rounded-full"></div>
-              <div class="w-3 h-3 bg-green-400 rounded-full"></div>
-            </div>
-          </div>
         </div>
       </div>
     </div>
