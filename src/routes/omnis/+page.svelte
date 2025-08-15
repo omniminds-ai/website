@@ -33,7 +33,8 @@
 
   const TOKEN_DATA = {
     contractAddress: 'G6iRK8kN67HJFrPA1CDA5KZaPJMiBu3bqdd9vdKBpump',
-    dexscreenerUrl: 'https://dexscreener.com/solana/G6iRK8kN67HJFrPA1CDA5KZaPJMiBu3bqdd9vdKBpump'
+    dexscreenerUrl: 'https://dexscreener.com/solana/G6iRK8kN67HJFrPA1CDA5KZaPJMiBu3bqdd9vdKBpump',
+    tradeUrl: 'https://swap.pump.fun/?input=So11111111111111111111111111111111111111112&output=G6iRK8kN67HJFrPA1CDA5KZaPJMiBu3bqdd9vdKBpump'
   };
 
   let copied = false;
@@ -45,6 +46,7 @@
 
   function handleInputClick(event: MouseEvent & { currentTarget: EventTarget & HTMLInputElement }) {
     event.currentTarget.select();
+    copyAddress();
   }
 </script>
 
@@ -65,6 +67,7 @@
 
 <main class="min-h-screen">
   <!-- Hero Section -->
+  <section class="relative">
   <div class="py-24">
     <div class="mx-auto max-w-7xl px-4 text-center sm:px-8 lg:px-16">
       <GradientHeading class="text-5xl md:text-6xl">$OMNIS Token</GradientHeading>
@@ -90,7 +93,7 @@
             {/if}
           </button>
         </div>
-        <ButtonCta href={TOKEN_DATA.dexscreenerUrl} target="_blank">
+        <ButtonCta href={TOKEN_DATA.tradeUrl} target="_blank">
           Trade $OMNIS
         </ButtonCta>
       </div>
@@ -440,9 +443,8 @@
             <ul class="flex-1">
               <li class="flex flex-col gap-3 sm:flex-row sm:items-start lg:items-center">
                 <div class="min-w-0">
-                  <GradientHeading>Trade $OMNIS:</GradientHeading>
                   <a
-                    href={TOKEN_DATA.dexscreenerUrl}
+                    href={TOKEN_DATA.tradeUrl}
                     target="_blank"
                     class="inline-flex items-center gap-2 break-all text-white underline underline-offset-2 hover:opacity-80">
                     Trade $OMNIS
@@ -456,6 +458,7 @@
       </div>
     </section>
   </div>
+  </section>
 </main>
 
 <style>

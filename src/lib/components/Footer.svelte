@@ -50,7 +50,7 @@
               <a href="https://t.me/omnimindsai" target="_blank">Telegram</a>
             </li>
             <li class="hover:text-accent-200">
-              <a href="https://x.com/omnimindsai" target="_blank">X (ex Twitter)</a>
+              <a href="https://x.com/omnimindsai" target="_blank">X (formely Twitter)</a>
             </li>
             <li class="hover:text-accent-200">
               <a href="https://github.com/omniminds-ai" target="_blank">Github</a>
