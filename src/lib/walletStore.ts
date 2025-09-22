@@ -20,7 +20,6 @@ import type {
   TransactionSignature,
   VersionedTransaction
 } from '@solana/web3.js';
-import posthog from 'posthog-js';
 import { get, writable } from 'svelte/store';
 
 export class WalletNotSelectedError extends WalletError {
@@ -112,7 +111,7 @@ function addAdapterEventListeners(adapter: Adapter) {
   wallets.forEach(({ adapter }) => {
     adapter.on('readyStateChange', onReadyStateChange, adapter);
   });
-  console.log("adapter: add event listners", {adapter});
+  console.log("adapter: add event listeners", {adapter});
   adapter.on('connect', onConnect);
   adapter.on('disconnect', onDisconnect);
   adapter.on('error', onError);
@@ -306,17 +305,16 @@ export async function initialize({
   localStorageKey = 'walletAdapter',
   onError = (error: WalletError) => console.error(error)
 }: WalletPropsConfig): Promise<void> {
+
   const walletsByName = wallets.reduce<Record<WalletName, Adapter>>((walletsByName, wallet) => {
     walletsByName[wallet.name] = wallet;
     return walletsByName;
   }, {});
-
   // Wrap adapters to conform to the `Wallet` interface
   const mapWallets = wallets.map((adapter) => ({
     adapter,
     readyState: adapter.readyState
   }));
-
   walletStore.updateConfig({
     wallets: mapWallets,
     walletsByName,
@@ -340,21 +338,23 @@ function newError(error: WalletError): WalletError {
 
 function onConnect() {
   const { adapter } = get(walletStore);
+  console.log({onConnect: adapter})
   if (!adapter) return;
 
-  console.log({adapter})
+
   walletStore.updateStatus({
     publicKey: adapter.publicKey,
     connected: adapter.connected
   });
-  posthog.identify(adapter.publicKey?.toString());
 }
 
 function onDisconnect() {
+  console.log("onDisconnect");
   walletStore.resetWallet();
 }
 
 function onReadyStateChange(this: Adapter, readyState: WalletReadyState) {
+  console.log({onReadyStateChange: readyState})
   const { adapter, wallets } = get(walletStore);
   if (!adapter) return;
 

@@ -43,7 +43,7 @@
   <meta name="twitter:image" content="/favicon.png" />
 </svelte:head>
 
-<WalletProvider {localStorageKey} wallets={walletAdapters} autoConnect />
+<WalletProvider {localStorageKey} wallets={walletAdapters} />
 <div class="bg-primary-100 overflow-x-hidden">
   <Navbar />
   <div>
