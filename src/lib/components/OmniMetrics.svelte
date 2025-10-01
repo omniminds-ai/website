@@ -3,24 +3,31 @@
   import GradientHeading from './GradientHeading.svelte';
 
   const TOKEN_DATA = {
-    contractAddress: 'G6iRK8kN67HJFrPA1CDA5KZaPJMiBu3bqdd9vdKBpump',
-    dexscreenerUrl: 'https://dexscreener.com/solana/G6iRK8kN67HJFrPA1CDA5KZaPJMiBu3bqdd9vdKBpump'
+    omnisAddress: '0x0478F82a19269e7593a6F99E2865e6F026997B74',
+    wethContractAddress: '0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2',
+    dexscreenerUrl: 'https://dexscreener.com/ethereum/0xf8f46e8130d7b29e509f64525793a33c717d74fb'
   };
 
-  let omniPrice = 0;
-  let solPrice = 0;
-  let omniPerSol = 0;
+  let usdPerOmnis = 0;
+  let ethPrice = 0
+  let omnisPerEth = 0;
 
   async function fetchPrices() {
     try {
-      const response = await fetch(
-        'https://lite-api.jup.ag/price/v3?ids=G6iRK8kN67HJFrPA1CDA5KZaPJMiBu3bqdd9vdKBpump,So11111111111111111111111111111111111111112'
+      let response = await fetch(
+        `https://api.coingecko.com/api/v3/simple/token_price/ethereum?contract_addresses=${TOKEN_DATA.omnisAddress}&vs_currencies=usd`
       );
-      const json = await response.json();
+      let json = await response.json();
+      usdPerOmnis = parseFloat(json[TOKEN_DATA.omnisAddress.toLowerCase()]['usd']);
 
-      omniPrice = parseFloat(json[TOKEN_DATA.contractAddress].usdPrice);
-      solPrice = parseFloat(json.So11111111111111111111111111111111111111112.usdPrice);
-      omniPerSol = solPrice / omniPrice;
+      response = await fetch(
+        `https://api.coingecko.com/api/v3/simple/token_price/ethereum?contract_addresses=${TOKEN_DATA.wethContractAddress}&vs_currencies=usd`
+      );
+      json = await response.json();
+      ethPrice = parseFloat(json[TOKEN_DATA.wethContractAddress.toLowerCase()]['usd']);
+      console.log({json, usdPerOmnis});
+
+      omnisPerEth = ethPrice / usdPerOmnis;
     } catch (error) {
       console.error('Error fetching prices:', error);
     }
@@ -39,14 +46,14 @@
   <!-- SOL Price -->
   <div class="flex flex-col justify-between rounded-2xl rounded-l-none border-l-4 border-l-secondary-100 ps-6 p-8 transition-transform hover:scale-[1.02] bg-gradient-to-r from-[#D9D9D900] to-[#B7A6FB33]">
     <div class="mb-6 flex items-center gap-3">
-      <GradientHeading class="text-3xl"><a href="{TOKEN_DATA.dexscreenerUrl}"><pre>$OMNIS</pre></a> per SOL</GradientHeading>
+      <GradientHeading class="text-3xl"><a href="{TOKEN_DATA.dexscreenerUrl}"><pre>$OMNIS</pre></a> per ETH</GradientHeading>
     </div>
     <div>
       <GradientHeading class="mb-2 text-4xl font-bol">
-        {omniPerSol.toLocaleString(undefined, { maximumFractionDigits: 0 })}
+        {omnisPerEth.toLocaleString(undefined, { maximumFractionDigits: 0 })}
       </GradientHeading>
       <GradientHeading class="text-base text-gray-600">
-        1 SOL = ${solPrice.toFixed(2)}
+        1 ETH = ${ethPrice.toFixed(2)}
       </GradientHeading>
     </div>
   </div>
@@ -58,7 +65,7 @@
     </div>
     <div>
       <GradientHeading class="mb-2 text-4xl">
-        ${(omniPrice * 1_000_000_000).toLocaleString(undefined, { maximumFractionDigits: 0 })}
+        ${(usdPerOmnis * 1_000_000_000).toLocaleString(undefined, { maximumFractionDigits: 0 })}
       </GradientHeading>
       <GradientHeading class="text-lg">Fully Diluted</GradientHeading>
     </div>

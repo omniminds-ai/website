@@ -1,40 +1,23 @@
 <script lang="ts">
   import {
-    Coins,
-    Handshake,
-    ArrowRight,
-    PartyPopper,
-    Gauge,
-    Wallet,
-    ChartPie,
-    Lock,
     ExternalLink,
-    Database,
     Check,
     Copy,
-    HandHeart
   } from 'lucide-svelte';
   import ButtonCta from '$lib/components/ButtonCTA.svelte';
   import OmnisMetrics from '$lib/components/OmniMetrics.svelte';
   import GradientHeading from '$lib/components/GradientHeading.svelte';
   import Button from '$lib/components/Button.svelte';
 
-  const lockContractAddress =
-    'https://lock.jup.ag/token/G6iRK8kN67HJFrPA1CDA5KZaPJMiBu3bqdd9vdKBpump';
   const vestedTreasuryContractAddress =
-    'https://lock.jup.ag/token/G6iRK8kN67HJFrPA1CDA5KZaPJMiBu3bqdd9vdKBpump';
-  const rnDVestingContractAddress =
-    'https://lock.jup.ag/token/G6iRK8kN67HJFrPA1CDA5KZaPJMiBu3bqdd9vdKBpump';
-  const deployerWalletAddress = '62TsurAEV9LFf7HbsS8HS1JRbbnyEXiHvLwMfsmXE5VT';
-  const rnDWalletAddress = '54kpNYwHFPcMZhvFjSkQkgdsNfgfvTfbdkYkYDfiWpFo';
-  const marketingWalletAddress = '9hfChuqu3UkEqNi9QQ4R4xUjfSspuNChu5GoiPxACKBG';
-  const trainingWalletAddress = '8U5qFfRvhZpoqJrWaCyJ94Mky8qDoNrFoCg7B6mXgCPr';
-  const kolsnPartnersWalletAddress = '23fNGGhSHD9NUBHdztKSYPvdf6Wy2Y5qJ2mVq4wdfMNV';
+    'https://app.uncx.network/vesting-v2/flux/1-4729?wallet=0xd3B9f665f0eF48072a95b5C3D5FC13d1C212Ea16&chain=1';
+  const deployerWalletAddress = '0xd3b9f665f0ef48072a95b5c3d5fc13d1c212ea16';
+  const taxWalletAddress = '0x65eAe045386dff93094E5896Ceb6aD54a221260D';
 
   const TOKEN_DATA = {
-    contractAddress: 'G6iRK8kN67HJFrPA1CDA5KZaPJMiBu3bqdd9vdKBpump',
-    dexscreenerUrl: 'https://dexscreener.com/solana/G6iRK8kN67HJFrPA1CDA5KZaPJMiBu3bqdd9vdKBpump',
-    tradeUrl: 'https://swap.pump.fun/?input=So11111111111111111111111111111111111111112&output=G6iRK8kN67HJFrPA1CDA5KZaPJMiBu3bqdd9vdKBpump'
+    contractAddress: '0x0478F82a19269e7593a6F99E2865e6F026997B74',
+    dexscreenerUrl: 'https://dexscreener.com/ethereum/0xf8F46E8130d7B29E509f64525793a33C717D74fB',
+    tradeUrl: 'https://app.uniswap.org/explore/tokens/ethereum/0x0478F82a19269e7593a6F99E2865e6F026997B74'
   };
 
   let copied = false;
@@ -131,7 +114,7 @@
               Where do I trade $OMNIS?
             </GradientHeading>
             <GradientHeading class="mb-2 text-gray-600">
-              Buy or sell $OMNIS with $USDC or $SOL through secure exchanges:
+              Buy or sell $OMNIS with $ETH through secure exchanges:
             </GradientHeading>
             <Button
               class="border-none ps-0">
@@ -155,59 +138,24 @@
     <section class="py-24 container mx-auto">
       <div class="mx-auto px-4 sm:px-8 lg:px-16">
         <GradientHeading class="mb-16 text-center text-5xl">Tokenomics</GradientHeading>
-        <div
-          class="group mb-8 rounded-2xl p-4 transition-all hover:scale-[1.02] hover:shadow-xl sm:p-8">
-          <img src="/tokenomics-piechart.png" alt="Tokenomics chart" class="mx-auto" />
-        </div>
         <div class="grid gap-4 sm:p-8 md:grid-cols-2">
-          <!-- Locked supply 4.5% -->
+          <!-- Locked supply 35% -->
           <div
             class="flex flex-col items-center justify-between rounded-3xl border border-white/10 p-10 lg:flex-row gap-2">
             <div class="flex-1">
-              <GradientHeading class="mb-4 text-3xl sm:text-4xl">Locked Supply</GradientHeading>
+              <GradientHeading class="mb-4 text-3xl sm:text-4xl">Vested Team Allocation</GradientHeading>
 
               <GradientHeading class="mb-6 text-sm leading-relaxed sm:text-base">
-                4.5% of the total supply is locked using Jupiter Lock
+               35% of the total supply is vested for a year using UNCX Lock
               </GradientHeading>
             </div>
 
             <ul class="flex-1">
-              <li class="flex items-start gap-3">
-                <GradientHeading>Locked until May 2026</GradientHeading>
+              <li class="flex items-start gap-3 mb-1">
+                <GradientHeading>Vested until September 2026</GradientHeading>
               </li>
-              <li class="flex flex-col gap-3 sm:flex-row sm:items-start">
+              <li class="flex flex-col gap-3 sm:flex-row sm:items-start mb-1">
                 <div class="min-w-0">
-                  <GradientHeading>Redeemed on the pump.fun creator wallet:</GradientHeading>
-                  <a
-                    href="https://solscan.io/account/{deployerWalletAddress}"
-                    target="_blank"
-                    class="inline-flex items-center gap-2 break-all text-white underline underline-offset-2 hover:opacity-80">
-                    {deployerWalletAddress}
-                    <ExternalLink class="h-4 w-4" />
-                  </a>
-                </div>
-              </li>
-            </ul>
-          </div>
-
-          <!-- Treasury supply 4.875% -->
-          <div
-            class="flex flex-col items-center justify-between rounded-3xl border border-white/10 p-10 lg:flex-row gap-2">
-            <div class="flex-1">
-              <GradientHeading class="mb-4 text-3xl sm:text-4xl">Vested Treasury</GradientHeading>
-
-              <GradientHeading class="mb-6 text-sm leading-relaxed sm:text-base">
-                4.875% of the total supply is vested over a 6 month period using Jupiter Lock
-              </GradientHeading>
-            </div>
-
-            <ul class="flex-1">
-              <li class="flex items-start gap-3">
-                <GradientHeading>Vested until November 2025</GradientHeading>
-              </li>
-              <li class="flex flex-col gap-3 sm:flex-row sm:items-start">
-                <div class="min-w-0">
-                  <GradientHeading>View Vesting Contract:</GradientHeading>
                   <a
                     href={vestedTreasuryContractAddress}
                     target="_blank"
@@ -217,11 +165,11 @@
                   </a>
                 </div>
               </li>
-              <li class="flex flex-col gap-3 sm:flex-row sm:items-start">
+              <li class="flex flex-col gap-3 sm:flex-row sm:items-start mb-1">
                 <div class="min-w-0">
-                  <GradientHeading>Redeemed on the pump.fun creator wallet:</GradientHeading>
+                  <GradientHeading>Redeemed on the deployer wallet:</GradientHeading>
                   <a
-                    href="https://solscan.io/account/{deployerWalletAddress}"
+                    href="https://etherscan.io/address/{deployerWalletAddress}"
                     target="_blank"
                     class="inline-flex items-center gap-2 break-all text-white underline underline-offset-2 hover:opacity-80">
                     {deployerWalletAddress}
@@ -236,30 +184,25 @@
           <div
             class="flex flex-col items-center justify-between rounded-3xl border border-white/10 p-10 lg:flex-row gap-2">
             <div class="flex-1">
-              <GradientHeading class="mb-4 text-3xl sm:text-4xl">Marketing</GradientHeading>
+              <GradientHeading class="mb-4 text-3xl sm:text-4xl">Tax Wallet</GradientHeading>
 
               <GradientHeading class="mb-6 text-sm leading-relaxed sm:text-base">
-                5.875% of the total supply is budgeted for marketing
+               5% on Buys and 5% of Sells go to Tax Wallet
               </GradientHeading>
             </div>
 
             <ul class="flex-1">
-              <li class="flex items-start gap-3">
-                <GradientHeading>
-                  Supply is available for use to fund ongoing marketing activities
-                </GradientHeading>
+              <li class="flex items-start gap-3 mb-1">
+                <GradientHeading>Used to pay for marketing and team activities</GradientHeading>
               </li>
-              <li class="flex items-start gap-3">
-                <GradientHeading>Used to pay for marketing and listing activities</GradientHeading>
-              </li>
-              <li class="flex flex-col gap-3 sm:flex-row sm:items-start">
+              <li class="flex flex-col gap-3 sm:flex-row sm:items-start mb-1">
                 <div class="min-w-0">
                   <GradientHeading>Wallet Address:</GradientHeading>
                   <a
-                    href="https://solscan.io/account/{marketingWalletAddress}"
+                    href="https://etherscan.io/address/{taxWalletAddress}"
                     target="_blank"
                     class="inline-flex items-center gap-2 break-all text-white underline underline-offset-2 hover:opacity-80">
-                    {marketingWalletAddress}
+                    {taxWalletAddress}
                     <ExternalLink class="h-4 w-4" />
                   </a>
                 </div>
@@ -267,176 +210,14 @@
             </ul>
           </div>
 
-          <!-- R&D supply 7.25% -->
-          <div
-            class="flex flex-col items-center justify-between rounded-3xl border border-white/10 p-10 lg:flex-row gap-2">
-            <div class="flex-1">
-              <GradientHeading class="mb-4 text-3xl sm:text-4xl">Technology R&D</GradientHeading>
-
-              <GradientHeading class="mb-6 text-sm leading-relaxed sm:text-base">
-                7.25% of the total supply is vested over a 6 months period using Jupiter Lock
-              </GradientHeading>
-            </div>
-
-            <ul class="flex-1">
-              <li class="flex items-start gap-3">
-                <GradientHeading>Vested until November 2025</GradientHeading>
-              </li>
-              <li class="flex items-start gap-3">
-                <GradientHeading>
-                  Supply to be used to pay different members working on developing our technology
-                </GradientHeading>
-              </li>
-              <li class="flex flex-col gap-3 sm:flex-row sm:items-start">
-                <div class="min-w-0">
-                  <GradientHeading>View Vesting Contract:</GradientHeading>
-                  <a
-                    href={rnDVestingContractAddress}
-                    target="_blank"
-                    class="inline-flex items-center gap-2 break-all text-white underline underline-offset-2 hover:opacity-80">
-                    View Vesting Contract
-                    <ExternalLink class="h-4 w-4" />
-                  </a>
-                </div>
-              </li>
-              <li class="flex flex-col gap-3 sm:flex-row sm:items-start">
-                <div class="min-w-0">
-                  <GradientHeading>Vested to R&D Wallet:</GradientHeading>
-                  <a
-                    href="https://solscan.io/account/{rnDWalletAddress}"
-                    target="_blank"
-                    class="inline-flex items-center gap-2 break-all text-white underline underline-offset-2 hover:opacity-80">
-                    {rnDWalletAddress}
-                    <ExternalLink class="h-4 w-4" />
-                  </a>
-                </div>
-              </li>
-            </ul>
-          </div>
-
-          <!-- Community & Training supply 4.5% -->
-          <div
-            class="flex flex-col items-center justify-between rounded-3xl border border-white/10 p-10 lg:flex-row gap-2">
-            <div class="flex-1">
-              <GradientHeading class="mb-4 text-3xl sm:text-4xl">
-                Community & Training
-              </GradientHeading>
-
-              <GradientHeading class="mb-6 text-sm leading-relaxed sm:text-base">
-                4.5% of the total supply is budgeted for community & training incentives
-              </GradientHeading>
-            </div>
-
-            <ul class="flex-1">
-              <li class="flex items-start gap-3">
-                <GradientHeading>
-                  Supply is available for use to fund any community incentives and newly launched
-                  trainings
-                </GradientHeading>
-              </li>
-              <li class="flex items-start gap-3">
-                <GradientHeading>
-                  Used to pay for incentivizing community initiatives
-                </GradientHeading>
-              </li>
-              <li class="flex items-start gap-3">
-                <GradientHeading>
-                  Used to escrow training funds till disbursed to trainers
-                </GradientHeading>
-              </li>
-              <li class="flex flex-col gap-3 sm:flex-row sm:items-start">
-                <div class="min-w-0">
-                  <GradientHeading>Wallet Address:</GradientHeading>
-                  <a
-                    href="https://solscan.io/account/{trainingWalletAddress}"
-                    target="_blank"
-                    class="inline-flex items-center gap-2 break-all text-white underline underline-offset-2 hover:opacity-80">
-                    {trainingWalletAddress}
-                    <ExternalLink class="h-4 w-4" />
-                  </a>
-                </div>
-              </li>
-            </ul>
-          </div>
-
-          <!-- KOLS & Partners 8% -->
-          <div
-            class="flex flex-col items-center justify-between rounded-3xl border border-white/10 p-10 lg:flex-row gap-2">
-            <div class="flex-1">
-              <GradientHeading class="mb-4 text-3xl sm:text-4xl">KOLs & Partners</GradientHeading>
-
-              <GradientHeading class="mb-6 text-sm leading-relaxed sm:text-base">
-                8% of the total supply is budgeted for paying KOLs & facilitating different
-                partnerships
-              </GradientHeading>
-            </div>
-
-            <ul class="flex-1">
-              <li class="flex items-start gap-3">
-                <GradientHeading>Supply is available for use</GradientHeading>
-              </li>
-              <li class="flex items-start gap-3">
-                <GradientHeading>Paid initatives from this pool will be vested</GradientHeading>
-              </li>
-              <li class="flex items-start gap-3">
-                <GradientHeading>Used to incentivize a vibrant partner ecosystem</GradientHeading>
-              </li>
-              <li class="flex flex-col gap-3 sm:flex-row sm:items-start">
-                <div class="min-w-0">
-                  <GradientHeading>Wallet Address:</GradientHeading>
-                  <a
-                    href="https://solscan.io/account/{kolsnPartnersWalletAddress}"
-                    target="_blank"
-                    class="inline-flex items-center gap-2 break-all text-white underline underline-offset-2 hover:opacity-80">
-                    {kolsnPartnersWalletAddress}
-                    <ExternalLink class="h-4 w-4" />
-                  </a>
-                </div>
-              </li>
-            </ul>
-          </div>
-
-          <!-- $VIRAL Holders Airdrop 20% -->
-          <div
-            class="flex flex-col items-center justify-between rounded-3xl border border-white/10 p-10 lg:flex-row gap-2">
-            <div class="flex-1">
-              <GradientHeading class="mb-4 text-3xl sm:text-4xl">
-                $VIRAL Holders Airdrop
-              </GradientHeading>
-
-              <GradientHeading class="mb-6 text-sm leading-relaxed sm:text-base">
-                20% were bundled on launch to airdrop to previous $VIRAL holders
-              </GradientHeading>
-            </div>
-
-            <ul class="flex-1">
-              <li class="flex items-start gap-3">
-                <GradientHeading>Airdrop completed right after launch</GradientHeading>
-              </li>
-              <li class="flex flex-col gap-3 sm:flex-row sm:items-start">
-                <div class="min-w-0">
-                  <GradientHeading>View Details:</GradientHeading>
-                  <a
-                    href="https://github.com/omniminds-ai/viralmind-airdrop"
-                    target="_blank"
-                    class="inline-flex items-center gap-2 break-all text-white underline underline-offset-2 hover:opacity-80">
-                    View Details
-                    <ExternalLink class="h-4 w-4" />
-                  </a>
-                </div>
-              </li>
-            </ul>
-          </div>
-
-          <!-- Open Market 55% -->
+          <!-- Open Market 65% -->
           <div
             class="flex flex-col items-center justify-between rounded-3xl border border-white/10 p-10 lg:flex-row gap-2">
             <div class="flex-1">
               <GradientHeading class="mb-4 text-3xl sm:text-4xl">Open Market</GradientHeading>
 
               <GradientHeading class="mb-6 text-sm leading-relaxed sm:text-base">
-                65% are available on the open market post-airdrop (45% at launch + 20% after
-                airdrop.
+                65% are available on the open market
               </GradientHeading>
             </div>
 
